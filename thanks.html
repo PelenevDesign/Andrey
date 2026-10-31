@@ -22,6 +22,7 @@
 <link rel="stylesheet" href="css/zero.css">
 <link rel="stylesheet" href="css/pages.css">
 <link rel="stylesheet" href="css/blocks.css">
+<link rel="stylesheet" href="css/system.css">
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
@@ -91,7 +92,14 @@
 </div>
 
 <main id="main">
-<section class="zb zb--vc zb--vh" id="rec450864715" style="--gh:550px;--vh:100;--zmax:900px;--zbg:rgb(255, 255, 255)"><div class="zb__bg" style="background-image:url('img/1_39396235.jpg')"></div><div class="zb__shade" style="background:linear-gradient(rgba(13, 12, 12, 0.8), rgba(0, 0, 0, 0.5))"></div><h1 class="zb__el zb__text" style="--kx:0;--ky:0;--gb:var(--gbd);--gwid:var(--gwd);--l:120px;--t:180px;--w:954px;--l-960:3px;--t-960:110px;--l-640:66px;--t-640:95px;--w-640:509px;--l-480:22px;--t-480:95px;--w-480:437px;--l-320:2px;--t-320:174px;--w-320:317px;--fs:36px;--fs-640:28px;--fs-480:24px;--fs-320:24px;color:rgb(255, 255, 255);font-weight:600;line-height:1.556;letter-spacing:2px;text-transform:uppercase" data-anim="fadein">Заявка принята</h1><div class="zb__el zb__text" style="--kx:0;--ky:0;--gb:var(--gbd);--gwid:var(--gwd);--l:120px;--t:250px;--w:954px;--l-960:3px;--t-960:184px;--l-640:66px;--t-640:165px;--w-640:509px;--l-480:22px;--t-480:95px;--w-480:437px;--l-320:39px;--t-320:231px;--w-320:242px;--fs:15px;--fs-640:18px;--fs-480:24px;--fs-320:12px;color:rgb(255, 255, 255);line-height:1.533;letter-spacing:2px;text-transform:uppercase" data-anim="fadein">Свяжемся с вами в ближайшее время.</div><a class="zb__el zb__button" style="--kx:0;--ky:0;--gb:var(--gbd);--gwid:var(--gwd);--l:120px;--t:315px;--w:235px;--h:60px;--l-960:0px;--t-960:250px;--l-640:203px;--t-640:280px;--l-480:123px;--t-480:419px;--l-320:43px;--t-320:295px;--fs:16px;color:rgb(26, 26, 26);font-weight:600;line-height:1.55;text-align:center;background-color:rgb(255, 255, 255);box-shadow:rgb(153, 153, 153) 0px 3px 0px 0px" data-anim="fadein" href="index.html">Вернуться назад</a><div class="zb__el zb__image" style="--kx:0;--ky:0;--gb:var(--gbd);--gwid:var(--gwd);--l:1144px;--t:479px;--w:55px"><img src="img/Group_15_33386137.svg" alt="" loading="lazy"></div><a class="zb__el zb__image" style="--kx:0;--ky:0;--gb:var(--gbd);--gwid:var(--gwd);--l:1110px;--t:445px;--w:123px" data-popup="video" href="#"><img src="img/Linked_Path_Group_63323032.svg" alt="" loading="lazy"></a></section>
+<section class="hero2 hero2--thanks" id="rec450864715">
+<div class="hero2__bg" style="background-image:url('img/1_39396235.jpg')"></div>
+<div class="hero2__shade" style="background:linear-gradient(rgba(13, 12, 12, 0.8), rgba(0, 0, 0, 0.5))"></div>
+<div class="wrap hero2__in">
+<h1 class="hero2__t">Заявка принята</h1>
+<p class="hero2__lead">Свяжемся с вами в ближайшее время.</p>
+<div class="hero2__act"><a class="btn btn--light" href="index.html">Вернуться назад</a></div>
+</div></section>
 <div class="popup popup--video" id="popup-video" role="dialog" aria-modal="true" aria-label="Видео" hidden><div class="popup__box"><button type="button" class="popup__close" aria-label="Закрыть" data-popup-close></button><div class="popup__video"><iframe title="Видео" data-src="https://www.youtube.com/embed/PxhO1v3Ggy0?autoplay=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe></div></div></div>
 
 </main>
@@ -154,9 +162,9 @@
       <div class="popup__title" id="popup-calc-title">Рассчитать стоимость проекта</div>
       <div class="popup__descr">Оставьте контакты: перезвоним и подберём решение под вашу задачу.</div>
       <form class="form" novalidate data-form="calc">
-        <div class="form__group"><input type="text" name="Name" autocomplete="name" placeholder="Ваше имя:" aria-label="Ваше имя"></div>
-        <div class="form__group"><input type="tel" name="Phone" autocomplete="tel" placeholder="Ваш номер телефона:" data-mask required inputmode="tel" aria-label="Ваш номер телефона"><div class="form__err" role="alert"></div></div>
-        <div class="form__group"><textarea name="Textarea" rows="3" placeholder="Ваш комментарий " aria-label="Ваш комментарий"></textarea></div>
+        <div class="form__group"><label class="form__lab" for="popup-calc-name">Ваше имя</label><input id="popup-calc-name" type="text" name="Name" autocomplete="name" placeholder="Как к вам обращаться"></div>
+        <div class="form__group"><label class="form__lab" for="popup-calc-phone">Номер телефона <span aria-hidden="true">*</span></label><input id="popup-calc-phone" type="tel" name="Phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" data-mask required inputmode="tel"><div class="form__err" role="alert"></div></div>
+        <div class="form__group"><label class="form__lab" for="popup-calc-textarea">Комментарий</label><textarea id="popup-calc-textarea" name="Textarea" rows="3" placeholder="Задача, размеры, сроки (по желанию)"></textarea></div>
         <div class="form__group"><label class="form__check"><input type="checkbox" name="Checkbox" value="yes" checked><i></i><span>Я согласен с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span></label><div class="form__err" role="alert"></div></div>
         <button type="submit" class="form__submit">Отправить</button>
         <div class="form__ok" role="status" aria-live="polite" hidden>Заявка принята. Свяжемся с вами в ближайшее время.</div>
@@ -172,9 +180,9 @@
       <div class="popup__title" id="popup-call-title">Закажите обратный звонок</div>
       <div class="popup__descr">Оставьте контакты: перезвоним и подберём решение под вашу задачу.</div>
       <form class="form" novalidate data-form="call">
-        <div class="form__group"><input type="text" name="Name" autocomplete="name" placeholder="Ваше имя:" aria-label="Ваше имя"></div>
-        <div class="form__group"><input type="tel" name="Phone" autocomplete="tel" placeholder="Ваш номер телефона:" data-mask required inputmode="tel" aria-label="Ваш номер телефона"><div class="form__err" role="alert"></div></div>
-        <div class="form__group"><textarea name="Textarea" rows="3" placeholder="Ваш комментарий " aria-label="Ваш комментарий"></textarea></div>
+        <div class="form__group"><label class="form__lab" for="popup-call-name">Ваше имя</label><input id="popup-call-name" type="text" name="Name" autocomplete="name" placeholder="Как к вам обращаться"></div>
+        <div class="form__group"><label class="form__lab" for="popup-call-phone">Номер телефона <span aria-hidden="true">*</span></label><input id="popup-call-phone" type="tel" name="Phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" data-mask required inputmode="tel"><div class="form__err" role="alert"></div></div>
+        <div class="form__group"><label class="form__lab" for="popup-call-textarea">Комментарий</label><textarea id="popup-call-textarea" name="Textarea" rows="3" placeholder="Задача, размеры, сроки (по желанию)"></textarea></div>
         <div class="form__group"><label class="form__check"><input type="checkbox" name="Checkbox" value="yes" checked><i></i><span>Я согласен с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span></label><div class="form__err" role="alert"></div></div>
         <button type="submit" class="form__submit">Отправить</button>
         <div class="form__ok" role="status" aria-live="polite" hidden>Заявка принята. Свяжемся с вами в ближайшее время.</div>

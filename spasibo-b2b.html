@@ -19,6 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;subset=latin,cyrillic&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/system.css">
 <link rel="stylesheet" href="css/b2b.css">
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
@@ -161,9 +162,9 @@
       <div class="popup__title" id="popup-calc-title">Рассчитать стоимость проекта</div>
       <div class="popup__descr">Оставьте контакты: перезвоним и подберём решение под вашу задачу.</div>
       <form class="form" novalidate data-form="calc">
-        <div class="form__group"><input type="text" name="Name" autocomplete="name" placeholder="Ваше имя:" aria-label="Ваше имя"></div>
-        <div class="form__group"><input type="tel" name="Phone" autocomplete="tel" placeholder="Ваш номер телефона:" data-mask required inputmode="tel" aria-label="Ваш номер телефона"><div class="form__err" role="alert"></div></div>
-        <div class="form__group"><textarea name="Textarea" rows="3" placeholder="Ваш комментарий " aria-label="Ваш комментарий"></textarea></div>
+        <div class="form__group"><label class="form__lab" for="popup-calc-name">Ваше имя</label><input id="popup-calc-name" type="text" name="Name" autocomplete="name" placeholder="Как к вам обращаться"></div>
+        <div class="form__group"><label class="form__lab" for="popup-calc-phone">Номер телефона <span aria-hidden="true">*</span></label><input id="popup-calc-phone" type="tel" name="Phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" data-mask required inputmode="tel"><div class="form__err" role="alert"></div></div>
+        <div class="form__group"><label class="form__lab" for="popup-calc-textarea">Комментарий</label><textarea id="popup-calc-textarea" name="Textarea" rows="3" placeholder="Задача, размеры, сроки (по желанию)"></textarea></div>
         <div class="form__group"><label class="form__check"><input type="checkbox" name="Checkbox" value="yes" checked><i></i><span>Я согласен с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span></label><div class="form__err" role="alert"></div></div>
         <button type="submit" class="form__submit">Отправить</button>
         <div class="form__ok" role="status" aria-live="polite" hidden>Заявка принята. Свяжемся с вами в ближайшее время.</div>
@@ -179,9 +180,9 @@
       <div class="popup__title" id="popup-call-title">Закажите обратный звонок</div>
       <div class="popup__descr">Оставьте контакты: перезвоним и подберём решение под вашу задачу.</div>
       <form class="form" novalidate data-form="call">
-        <div class="form__group"><input type="text" name="Name" autocomplete="name" placeholder="Ваше имя:" aria-label="Ваше имя"></div>
-        <div class="form__group"><input type="tel" name="Phone" autocomplete="tel" placeholder="Ваш номер телефона:" data-mask required inputmode="tel" aria-label="Ваш номер телефона"><div class="form__err" role="alert"></div></div>
-        <div class="form__group"><textarea name="Textarea" rows="3" placeholder="Ваш комментарий " aria-label="Ваш комментарий"></textarea></div>
+        <div class="form__group"><label class="form__lab" for="popup-call-name">Ваше имя</label><input id="popup-call-name" type="text" name="Name" autocomplete="name" placeholder="Как к вам обращаться"></div>
+        <div class="form__group"><label class="form__lab" for="popup-call-phone">Номер телефона <span aria-hidden="true">*</span></label><input id="popup-call-phone" type="tel" name="Phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" data-mask required inputmode="tel"><div class="form__err" role="alert"></div></div>
+        <div class="form__group"><label class="form__lab" for="popup-call-textarea">Комментарий</label><textarea id="popup-call-textarea" name="Textarea" rows="3" placeholder="Задача, размеры, сроки (по желанию)"></textarea></div>
         <div class="form__group"><label class="form__check"><input type="checkbox" name="Checkbox" value="yes" checked><i></i><span>Я согласен с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span></label><div class="form__err" role="alert"></div></div>
         <button type="submit" class="form__submit">Отправить</button>
         <div class="form__ok" role="status" aria-live="polite" hidden>Заявка принята. Свяжемся с вами в ближайшее время.</div>

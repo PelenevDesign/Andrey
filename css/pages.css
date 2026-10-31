@@ -18,7 +18,7 @@
 .sx { color: #fff; }
 body.page-light { background: #fff; }
 .sx__title { --fs: 42px; width: min(1200px, 100%); margin: 0 auto; padding: 0 20px var(--tpb, 60px); font-size: var(--fs); line-height: 1.23; font-weight: 600; text-align: center; }
-.sx__descr { --fs: 18px; width: min(1000px, 100%); margin: -30px auto 50px; padding: 0 20px; font-size: var(--fs); line-height: 1.55; font-weight: 300; text-align: center; }
+.sx__descr { --fs: 18px; width: min(1000px, 100%); margin: -30px auto 50px; padding: 0 20px; font-size: var(--fs); line-height: 1.55; font-weight: 400; text-align: center; }
 @media (max-width: 959px) { .sx__title { font-size: calc(var(--fs) * .86); padding-bottom: 40px; } .sx__descr { font-size: calc(var(--fs) * .9); } }
 @media (max-width: 639px) { .sx__title { font-size: calc(var(--fs) * .7); padding-bottom: 30px; } .sx__descr { font-size: calc(var(--fs) * .85); margin-bottom: 30px; } }
 
@@ -30,7 +30,7 @@ body.page-light { background: #fff; }
 .f66__img img { width: 100%; aspect-ratio: 1; object-fit: cover; }
 .f66__item { margin-bottom: 50px; }
 .f66__h { --fs: 28px; padding-bottom: 15px; font-size: var(--fs); line-height: 1.17; font-weight: 600; }
-.f66__d { font-size: 16px; line-height: 1.55; font-weight: 300; }
+.f66__d { font-size: 16px; line-height: 1.55; font-weight: 400; }
 .f66__d strong { font-weight: 600; }
 @media (max-width: 959px) {
   .f66 { flex-direction: column; }
@@ -70,7 +70,7 @@ textarea.zf__in { padding-top: 14px; resize: none; }
 select.zf__in { cursor: pointer; }
 .zf__in::placeholder { color: #757575; opacity: 1; }
 .zf__in.is-error { outline: 2px solid #e5484d; }
-.zf__cb { position: relative; display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.4; font-weight: 300; cursor: pointer; }
+.zf__cb { position: relative; display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.4; font-weight: 400; cursor: pointer; }
 .zf__cb input { position: absolute; opacity: 0; pointer-events: none; }
 .zf__cb i { flex: none; position: relative; width: 20px; height: 20px; border: 1px solid #fff; border-radius: 3px; background: transparent; }
 .zf__cb input:checked + i { background: #fff; }

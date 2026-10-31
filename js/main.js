@@ -292,5 +292,17 @@
     btn.addEventListener('click', function () { set(true); });
     close.addEventListener('click', function () { set(false); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+
+    /* рядом с формой, баннером «Узнайте стоимость», контактами и подвалом свой призыв к действию:
+       кнопка там не нужна и не перекрывает поля */
+    if ('IntersectionObserver' in window) {
+      var zones = $$('.calc, .cta2, .cta, .contacts, .ftr, .bf, .b2b-form');
+      var seen = new Set();
+      var io = new IntersectionObserver(function (items) {
+        items.forEach(function (it) { if (it.isIntersecting) seen.add(it.target); else seen.delete(it.target); });
+        box.classList.toggle('is-away', seen.size > 0 && !box.classList.contains('is-open'));
+      });
+      zones.forEach(function (z) { io.observe(z); });
+    }
   })();
 })();

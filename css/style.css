@@ -19,7 +19,7 @@ html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidd
 
 body {
   font-family: var(--ff);
-  font-weight: 300;
+  font-weight: 400;
   color: #fff;
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
@@ -107,7 +107,7 @@ select:focus-visible, summary:focus-visible { outline: 3px solid #199c68; outlin
   border-left: 2.5px solid transparent; border-right: 2.5px solid transparent; border-top: 3px solid currentColor;
 }
 
-.hdr__phone, .hdr__mail { flex: none; font-size: 18px; font-weight: 300; line-height: 28px; white-space: nowrap; transition: opacity .2s ease; }
+.hdr__phone, .hdr__mail { flex: none; font-size: 18px; font-weight: 400; line-height: 28px; white-space: nowrap; transition: opacity .2s ease; }
 .hdr__phone:hover, .hdr__mail:hover { opacity: .65; }
 .hdr__mail { margin-left: 20px; }
 @media (max-width: 1299px) { .hdr__mail { display: none; } }
@@ -172,7 +172,7 @@ select:focus-visible, summary:focus-visible { outline: 3px solid #199c68; outlin
 }
 .mmenu__sub-toggle[aria-expanded="true"]::after { transform: rotate(180deg); }
 .mmenu__sub { display: none; margin-top: 16px; flex-direction: column; gap: 12px; }
-.mmenu__sub a { font-size: 15px; font-weight: 300; opacity: .85; }
+.mmenu__sub a { font-size: 15px; font-weight: 400; opacity: .85; }
 .mmenu__group.is-open .mmenu__sub { display: flex; }
 .mmenu__close { position: absolute; top: 24px; right: 24px; width: 30px; height: 30px; }
 .mmenu__close::before, .mmenu__close::after {
@@ -230,7 +230,7 @@ select:focus-visible, summary:focus-visible { outline: 3px solid #199c68; outlin
 .adv__item--2 { top: 291px; width: 478px; }
 .adv__item--3 { top: 429px; width: 384px; }
 .adv__item h3 { font-size: 24px; line-height: 29px; font-weight: 600; }
-.adv__item p { margin-top: 15px; font-size: 16px; line-height: 25px; font-weight: 300; }
+.adv__item p { margin-top: 15px; font-size: 16px; line-height: 25px; font-weight: 400; }
 
 /* ============================================================
    СОБСТВЕННОЕ ПРОИЗВОДСТВО
@@ -247,8 +247,8 @@ select:focus-visible, summary:focus-visible { outline: 3px solid #199c68; outlin
 }
 .prod__kicker { font-size: 14px; line-height: 22px; font-weight: 700; letter-spacing: 2px; }
 .prod__title { margin-top: 10px; font-size: 24px; line-height: 32px; font-weight: 700; }
-.prod__lead { margin-top: 30px; width: 415px; font-size: 16px; line-height: 24px; font-weight: 300; }
-.prod__list { margin-top: 30px; width: 415px; font-size: 16px; line-height: 24px; font-weight: 300; }
+.prod__lead { margin-top: 30px; width: 415px; font-size: 16px; line-height: 24px; font-weight: 400; }
+.prod__list { margin-top: 30px; width: 415px; font-size: 16px; line-height: 24px; font-weight: 400; }
 .prod__list b { font-weight: 700; }
 
 /* ============================================================
@@ -284,7 +284,7 @@ select:focus-visible, summary:focus-visible { outline: 3px solid #199c68; outlin
 .wcard__img { aspect-ratio: 1.3; background: #ddd 50% 50% / cover no-repeat; }
 .wcard__body { flex: 1; padding: 25px 30px 0; }
 .wcard__title { font-size: 20px; line-height: 27px; font-weight: 600; }
-.wcard__descr { margin-top: 8px; font-size: 14px; line-height: 1.55; font-weight: 300; color: rgba(0, 0, 0, .9); }
+.wcard__descr { margin-top: 8px; font-size: 14px; line-height: 1.55; font-weight: 400; color: rgba(0, 0, 0, .9); }
 .wcard__btn {
   display: flex; align-items: center; justify-content: center;
   width: 210px; height: 35px; margin: 24px 30px 27px;
@@ -336,7 +336,7 @@ select:focus-visible, summary:focus-visible { outline: 3px solid #199c68; outlin
 .acc__icon::after { left: 19px; top: 9px; width: 2px; height: 22px; }
 .acc__head[aria-expanded="true"] .acc__icon::after { transform: rotate(90deg); }
 .acc__body { overflow: hidden; }
-.acc__a { padding: 0 50px 27px 0; font-size: 18px; line-height: 1.55; font-weight: 300; }
+.acc__a { padding: 0 50px 27px 0; font-size: 18px; line-height: 1.55; font-weight: 400; }
 .acc__a ul { list-style: disc; padding-left: 22px; }
 
 /* ============================================================
@@ -357,7 +357,7 @@ select:focus-visible, summary:focus-visible { outline: 3px solid #199c68; outlin
 .scard:hover .scard__shade { background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)); }
 .scard__content { position: relative; display: flex; flex-direction: column; height: 100%; }
 .scard__title { margin: 30px 57px 30px 30px; font-size: 22px; line-height: 1.35; font-weight: 600; }
-.scard__descr { margin: auto 30px 30px; font-size: 18px; line-height: 1.55; font-weight: 300; }
+.scard__descr { margin: auto 30px 30px; font-size: 18px; line-height: 1.55; font-weight: 400; }
 .scard__arrow { position: absolute; right: 32px; top: 34px; width: 10px; height: 18px; transition: transform .3s ease; }
 .scard:hover .scard__arrow { transform: translateX(4px); }
 
@@ -370,9 +370,9 @@ select:focus-visible, summary:focus-visible { outline: 3px solid #199c68; outlin
 .contacts__map > ymaps { position: absolute !important; inset: 0; width: 100% !important; height: 100% !important; }
 .contacts__text { flex: 1; display: flex; align-items: center; padding: 90px; background: var(--bg-contacts); }
 .contacts__title { margin-bottom: 45px; font-size: 28px; line-height: 1.17; font-weight: 600; }
-.contacts__links { margin-bottom: 30px; font-size: 24px; line-height: 36px; font-weight: 300; }
+.contacts__links { margin-bottom: 30px; font-size: 24px; line-height: 36px; font-weight: 400; }
 .contacts__links a { color: #fff; }
-.contacts__addr { margin-top: 32px; font-size: 18px; line-height: 1.55; font-weight: 300; }
+.contacts__addr { margin-top: 32px; font-size: 18px; line-height: 1.55; font-weight: 400; }
 
 /* ============================================================
    ПОДВАЛ
@@ -383,14 +383,14 @@ select:focus-visible, summary:focus-visible { outline: 3px solid #199c68; outlin
   width: 1200px; margin: 0 auto; padding: 0 20px;
 }
 .ftr__logo { width: 120px; height: 90px; object-fit: contain; }
-.ftr__priv { margin-top: 25px; font-size: 14px; line-height: 1.55; font-weight: 300; }
+.ftr__priv { margin-top: 25px; font-size: 14px; line-height: 1.55; font-weight: 400; }
 .ftr__priv a { color: #fff; }
 .ftr__title { margin-bottom: 14px; font-size: 16px; line-height: 1.35; font-weight: 600; color: #525252; }
-.ftr__menu li { margin-bottom: 10px; font-size: 14px; line-height: 1.55; font-weight: 300; }
+.ftr__menu li { margin-bottom: 10px; font-size: 14px; line-height: 1.55; font-weight: 400; }
 .ftr__menu li:last-child { margin-bottom: 0; }
 .ftr__menu a { color: #fff; transition: opacity .2s ease; }
 .ftr__menu a:hover { opacity: .65; }
-.ftr__col--contacts { font-size: 14px; line-height: 1.55; font-weight: 300; }
+.ftr__col--contacts { font-size: 14px; line-height: 1.55; font-weight: 400; }
 .ftr__col--contacts a { color: #fff; }
 .ftr__drop .drop { left: -4px; }
 
@@ -425,7 +425,7 @@ select:focus-visible, summary:focus-visible { outline: 3px solid #199c68; outlin
 .fcall__close::before { transform: rotate(45deg); }
 .fcall__close::after { transform: rotate(-45deg); }
 .fcall__title { font-size: 18px; line-height: 1.35; font-weight: 600; }
-.fcall__descr { margin-top: 6px; font-size: 14px; line-height: 1.55; font-weight: 300; }
+.fcall__descr { margin-top: 6px; font-size: 14px; line-height: 1.55; font-weight: 400; }
 .fcall__phone { display: block; margin-top: 16px; font-size: 22px; line-height: 1.35; font-weight: 600; }
 
 /* ============================================================
@@ -445,7 +445,7 @@ select:focus-visible, summary:focus-visible { outline: 3px solid #199c68; outlin
 .popup__close::after { transform: rotate(-45deg); }
 .popup__wrap { padding: 40px 45px; }
 .popup__title { margin-bottom: 11px; font-size: 24px; line-height: 1.23; font-weight: 600; text-align: center; }
-.popup__descr { font-size: 16px; line-height: 1.55; font-weight: 300; text-align: center; }
+.popup__descr { font-size: 16px; line-height: 1.55; font-weight: 400; text-align: center; }
 
 .form { margin-top: 28px; }
 .form__group { margin-bottom: 10px; }
@@ -461,7 +461,7 @@ select:focus-visible, summary:focus-visible { outline: 3px solid #199c68; outlin
 .form__err { min-height: 0; margin-top: 4px; font-size: 14px; line-height: 1.3; color: #d33; }
 .form__err:empty { display: none; }
 
-.form__check { position: relative; display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 18px; font-weight: 300; cursor: pointer; }
+.form__check { position: relative; display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 18px; font-weight: 400; cursor: pointer; }
 .form__check input { position: absolute; opacity: 0; pointer-events: none; }
 .form__check i {
   flex: none; position: relative; width: 20px; height: 20px; margin-top: -1px;
@@ -643,7 +643,7 @@ select:focus-visible, summary:focus-visible { outline: 3px solid #199c68; outlin
   font-size: 16px; line-height: 1.4; transition: background-color .2s ease;
 }
 .b2b-strip__in:hover { background: rgba(255, 255, 255, .04); }
-.b2b-strip__q { font-weight: 300; opacity: .75; }
+.b2b-strip__q { font-weight: 400; opacity: .75; }
 .b2b-strip__t { font-weight: 600; border-bottom: 1px solid rgba(255, 255, 255, .5); transition: border-color .2s ease; }
 .b2b-strip__in:hover .b2b-strip__t { border-bottom-color: #fff; }
 .b2b-strip__a { font-size: 20px; line-height: 1; transition: transform .25s ease; }
