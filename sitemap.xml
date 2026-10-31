@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO: уточнить у заказчика, боевой домен сайта: адреса ниже даны для https://art-stone.site -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://art-stone.site/</loc><lastmod>2026-10-31</lastmod><priority>1.0</priority></url>
+  <url><loc>https://art-stone.site/gidrorez</loc><lastmod>2026-10-31</lastmod><priority>0.8</priority></url>
+  <url><loc>https://art-stone.site/panno</loc><lastmod>2026-10-31</lastmod><priority>0.8</priority></url>
+  <url><loc>https://art-stone.site/stupeni</loc><lastmod>2026-10-31</lastmod><priority>0.8</priority></url>
+  <url><loc>https://art-stone.site/podokonniki</loc><lastmod>2026-10-31</lastmod><priority>0.8</priority></url>
+  <url><loc>https://art-stone.site/stoleshici</loc><lastmod>2026-10-31</lastmod><priority>0.8</priority></url>
+  <url><loc>https://art-stone.site/45grad</loc><lastmod>2026-10-31</lastmod><priority>0.8</priority></url>
+  <url><loc>https://art-stone.site/stroitelnym-kompaniyam</loc><lastmod>2026-10-31</lastmod><priority>0.9</priority></url>
+  <url><loc>https://art-stone.site/about</loc><lastmod>2026-10-31</lastmod><priority>0.6</priority></url>
+  <url><loc>https://art-stone.site/contacts</loc><lastmod>2026-10-31</lastmod><priority>0.6</priority></url>
+  <url><loc>https://art-stone.site/privacy</loc><lastmod>2026-10-31</lastmod><priority>0.2</priority></url>
+  <url><loc>https://art-stone.site/tpost/stoleshnica</loc><lastmod>2026-10-31</lastmod><priority>0.5</priority></url>
+  <url><loc>https://art-stone.site/tpost/a966z0ijt1-oblitsovka-kaminov-naturalnim-kamnem</loc><lastmod>2026-10-31</lastmod><priority>0.5</priority></url>
+  <url><loc>https://art-stone.site/tpost/vhodnayagruppa</loc><lastmod>2026-10-31</lastmod><priority>0.5</priority></url>
+  <url><loc>https://art-stone.site/tpost/zdm690c7z1-vipolnennie-proekti</loc><lastmod>2026-10-31</lastmod><priority>0.5</priority></url>
+</urlset>

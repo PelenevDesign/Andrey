@@ -1,0 +1,44 @@
+/* ============================================================
+   Нулевые блоки (zb): абсолютная раскладка по сетке 1200/960/640/480/320,
+   как у конструктора оригинала. Значения задаются переменными --l, --t,
+   --w, --h, --fs и их вариантами --l-960 … --l-320 прямо на элементе.
+   --gb/--gwid — привязка к окну вместо сетки, --kx/--ky — привязка к центру/краю.
+   ============================================================ */
+.zb { --gw: 1200px; --gbd: calc((100% - var(--gw)) / 2); --gwd: var(--gw); --gt: 0px; --GH: var(--gh);
+  position: relative; width: 100%; height: var(--GH); background: var(--zbg, transparent); }
+.zb--vc { --gt: calc((100% - var(--GH)) / 2); }
+.zb--vh { height: max(var(--GH), min(calc(var(--vh, 100) * 1vh), var(--zmax, 9999px))); }
+.zb:not(.zb--ov) { overflow: hidden; }
+.zb--ov { overflow-x: clip; }
+.zb__bg, .zb__shade { position: absolute; inset: 0; pointer-events: none; }
+.zb__bg { background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; }
+.zb__el { --L: var(--l); --T: var(--t); --W: var(--w); --H: var(--h); --FS: var(--fs);
+  --GB: var(--gb, var(--gbd)); --GW: var(--gwid, var(--gwd)); --KX: var(--kx, 0); --KY: var(--ky, 0);
+  position: absolute;
+  left: calc(var(--GB) + var(--KX) * var(--GW) + var(--L));
+  top: calc(var(--gt) + var(--KY) * var(--GH) + var(--T));
+  width: var(--W, auto); height: var(--H, auto); font-size: var(--FS, inherit); }
+.zb__text { word-wrap: break-word; }
+.zb__text a { text-decoration: underline; }
+.zb__image img { display: block; width: 100%; height: 100%; }
+.zb__shape, .zb__button { background-repeat: no-repeat; }
+.zb__button { display: flex; align-items: center; justify-content: center; text-align: center; cursor: pointer; transition: opacity .2s ease, transform .2s ease; }
+.zb__button:hover { opacity: .88; }
+a.zb__el { color: inherit; text-decoration: none; }
+
+@media (max-width: 1199px) {
+  .zb { --gw: 960px; --GH: var(--gh-960, var(--gh)); }
+  .zb__el { --L: var(--l-960, var(--l)); --T: var(--t-960, var(--t)); --W: var(--w-960, var(--w)); --H: var(--h-960, var(--h)); --FS: var(--fs-960, var(--fs)); --GB: var(--gb-960, var(--gb, var(--gbd))); --GW: var(--gwid-960, var(--gwid, var(--gwd))); --KX: var(--kx-960, var(--kx, 0)); --KY: var(--ky-960, var(--ky, 0)); }
+}
+@media (max-width: 959px) {
+  .zb { --gw: 640px; --GH: var(--gh-640, var(--gh-960, var(--gh))); }
+  .zb__el { --L: var(--l-640, var(--l-960, var(--l))); --T: var(--t-640, var(--t-960, var(--t))); --W: var(--w-640, var(--w-960, var(--w))); --H: var(--h-640, var(--h-960, var(--h))); --FS: var(--fs-640, var(--fs-960, var(--fs))); --GB: var(--gb-640, var(--gb-960, var(--gb, var(--gbd)))); --GW: var(--gwid-640, var(--gwid-960, var(--gwid, var(--gwd)))); --KX: var(--kx-640, var(--kx-960, var(--kx, 0))); --KY: var(--ky-640, var(--ky-960, var(--ky, 0))); }
+}
+@media (max-width: 639px) {
+  .zb { --gw: 480px; --GH: var(--gh-480, var(--gh-640, var(--gh-960, var(--gh)))); }
+  .zb__el { --L: var(--l-480, var(--l-640, var(--l-960, var(--l)))); --T: var(--t-480, var(--t-640, var(--t-960, var(--t)))); --W: var(--w-480, var(--w-640, var(--w-960, var(--w)))); --H: var(--h-480, var(--h-640, var(--h-960, var(--h)))); --FS: var(--fs-480, var(--fs-640, var(--fs-960, var(--fs)))); --GB: var(--gb-480, var(--gb-640, var(--gb-960, var(--gb, var(--gbd))))); --GW: var(--gwid-480, var(--gwid-640, var(--gwid-960, var(--gwid, var(--gwd))))); --KX: var(--kx-480, var(--kx-640, var(--kx-960, var(--kx, 0)))); --KY: var(--ky-480, var(--ky-640, var(--ky-960, var(--ky, 0)))); }
+}
+@media (max-width: 479px) {
+  .zb { --gw: 320px; --GH: var(--gh-320, var(--gh-480, var(--gh-640, var(--gh-960, var(--gh))))); }
+  .zb__el { --L: var(--l-320, var(--l-480, var(--l-640, var(--l-960, var(--l))))); --T: var(--t-320, var(--t-480, var(--t-640, var(--t-960, var(--t))))); --W: var(--w-320, var(--w-480, var(--w-640, var(--w-960, var(--w))))); --H: var(--h-320, var(--h-480, var(--h-640, var(--h-960, var(--h))))); --FS: var(--fs-320, var(--fs-480, var(--fs-640, var(--fs-960, var(--fs))))); --GB: var(--gb-320, var(--gb-480, var(--gb-640, var(--gb-960, var(--gb, var(--gbd)))))); --GW: var(--gwid-320, var(--gwid-480, var(--gwid-640, var(--gwid-960, var(--gwid, var(--gwd)))))); --KX: var(--kx-320, var(--kx-480, var(--kx-640, var(--kx-960, var(--kx, 0))))); --KY: var(--ky-320, var(--ky-480, var(--ky-640, var(--ky-960, var(--ky, 0))))); }
+}

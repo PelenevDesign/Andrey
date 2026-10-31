@@ -1,0 +1,84 @@
+/* ============================================================
+   Внутренние страницы: компоненты стандартных блоков
+   (нулевые блоки — см. zero.css)
+   ============================================================ */
+
+/* появление элементов нулевых блоков при скролле */
+[data-anim] { opacity: 0; transition: opacity .9s ease, transform .9s ease; }
+[data-anim="fadeinup"] { transform: translateY(40px); }
+[data-anim="fadeindown"] { transform: translateY(-40px); }
+[data-anim="fadeinleft"] { transform: translateX(-40px); }
+[data-anim="fadeinright"] { transform: translateX(40px); }
+[data-anim="zoomin"] { transform: scale(.92); }
+[data-anim].is-in { opacity: 1; transform: none; }
+.zb__el[data-anim][style*="rotate"].is-in { transform: none; }
+@media (prefers-reduced-motion: reduce) { [data-anim] { opacity: 1; transform: none; transition: none; } }
+
+/* ---------- общие части секций ---------- */
+.sx { color: #fff; }
+body.page-light { background: #fff; }
+.sx__title { --fs: 42px; width: min(1200px, 100%); margin: 0 auto; padding: 0 20px var(--tpb, 60px); font-size: var(--fs); line-height: 1.23; font-weight: 600; text-align: center; }
+.sx__descr { --fs: 18px; width: min(1000px, 100%); margin: -30px auto 50px; padding: 0 20px; font-size: var(--fs); line-height: 1.55; font-weight: 300; text-align: center; }
+@media (max-width: 959px) { .sx__title { font-size: calc(var(--fs) * .86); padding-bottom: 40px; } .sx__descr { font-size: calc(var(--fs) * .9); } }
+@media (max-width: 639px) { .sx__title { font-size: calc(var(--fs) * .7); padding-bottom: 30px; } .sx__descr { font-size: calc(var(--fs) * .85); margin-bottom: 30px; } }
+
+/* ---------- t1066: список преимуществ + картинка ---------- */
+.f66 { display: flex; align-items: center; width: min(1200px, 100%); margin: 0 auto; }
+.f66__list { order: 1; flex: 0 0 50%; max-width: 50%; padding: 0 50px; }
+.f66__item:last-child { margin-bottom: 0; }
+.f66__img { order: 2; flex: 0 0 50%; max-width: 50%; padding: 0 20px; }
+.f66__img img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.f66__item { margin-bottom: 50px; }
+.f66__h { --fs: 28px; padding-bottom: 15px; font-size: var(--fs); line-height: 1.17; font-weight: 600; }
+.f66__d { font-size: 16px; line-height: 1.55; font-weight: 300; }
+.f66__d strong { font-weight: 600; }
+@media (max-width: 959px) {
+  .f66 { flex-direction: column; }
+  .f66__list, .f66__img { flex: none; max-width: 100%; width: 100%; padding: 0 20px; }
+  .f66__img { order: 0; max-width: 560px; }
+  .f66__list { order: 1; max-width: 560px; padding-top: 40px; }
+  .f66__h { font-size: calc(var(--fs) * .8); }
+}
+
+/* ---------- галереи с лайтбоксом ---------- */
+.gal { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 20px 20px 20px; }
+.gal__item { display: block; width: 100%; aspect-ratio: 1; background: #333 50% 50% / cover no-repeat; cursor: zoom-in; transition: opacity .25s ease; }
+.gal__item:hover { opacity: .85; }
+@media (max-width: 959px) { .gal { grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 12px; } }
+@media (max-width: 639px) { .gal { grid-template-columns: repeat(2, 1fr); gap: 8px; padding: 8px; } }
+.lightbox { position: fixed; inset: 0; z-index: 500; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, .92); }
+.lightbox[hidden] { display: none !important; }
+.lightbox__img { max-width: 92vw; max-height: 90vh; object-fit: contain; box-shadow: 0 0 40px rgba(0, 0, 0, .6); }
+.lightbox__btn { position: absolute; width: 48px; height: 48px; border-radius: 50%; background: rgba(255, 255, 255, .14); }
+.lightbox__btn:hover { background: rgba(255, 255, 255, .28); }
+.lightbox__btn--close { top: 20px; right: 20px; }
+.lightbox__btn--prev { left: 20px; top: 50%; margin-top: -24px; }
+.lightbox__btn--next { right: 20px; top: 50%; margin-top: -24px; }
+.lightbox__btn::before, .lightbox__btn::after { content: ''; position: absolute; background: #fff; }
+.lightbox__btn--close::before, .lightbox__btn--close::after { left: 14px; top: 23px; width: 20px; height: 2px; }
+.lightbox__btn--close::before { transform: rotate(45deg); } .lightbox__btn--close::after { transform: rotate(-45deg); }
+.lightbox__btn--prev::before, .lightbox__btn--next::before { width: 12px; height: 12px; top: 18px; background: none; border-top: 2px solid #fff; border-right: 2px solid #fff; }
+.lightbox__btn--next::before { left: 15px; transform: rotate(45deg); } .lightbox__btn--prev::before { left: 21px; transform: rotate(-135deg); }
+.lightbox__btn--prev::after, .lightbox__btn--next::after { display: none; }
+
+/* ---------- формы внутри нулевых блоков ---------- */
+.zf { width: 100%; color: #fff; }
+.zf__g { position: relative; }
+.zf__lab { display: block; padding-bottom: 5px; line-height: 1.4; }
+.zf__in { display: block; width: 100%; padding: 0 20px; font-family: inherit; outline: 0; border-radius: 0; }
+textarea.zf__in { padding-top: 14px; resize: none; }
+select.zf__in { cursor: pointer; }
+.zf__in::placeholder { color: #757575; opacity: 1; }
+.zf__in.is-error { outline: 2px solid #e5484d; }
+.zf__cb { position: relative; display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.4; font-weight: 300; cursor: pointer; }
+.zf__cb input { position: absolute; opacity: 0; pointer-events: none; }
+.zf__cb i { flex: none; position: relative; width: 20px; height: 20px; border: 1px solid #fff; border-radius: 3px; background: transparent; }
+.zf__cb input:checked + i { background: #fff; }
+.zf__cb input:checked + i::after { content: ''; position: absolute; left: 6px; top: 2px; width: 5px; height: 10px; border: solid #000; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.zf__cb a { text-decoration: underline; }
+.zf__btn { display: block; width: 100%; margin-top: 10px; padding: 0 30px; font-family: inherit; transition: opacity .2s ease; }
+.zf__btn:hover { opacity: .88; }
+.zf__btn:disabled { opacity: .5; cursor: default; }
+.zf__err { margin-top: 4px; font-size: 13px; line-height: 1.3; color: #ff8a8a; }
+.zf__err:empty { display: none; }
+.zf__ok { margin-top: 16px; padding: 12px 14px; background: rgba(25, 156, 104, .18); border: 1px solid var(--green); border-radius: 5px; font-size: 15px; line-height: 1.4; font-weight: 400; }
