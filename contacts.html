@@ -91,7 +91,7 @@
 </div>
 
 <main id="main">
-<section class="contacts" id="rec1650995321"><div class="contacts__map" data-ymap data-lat="56.008001" data-lng="37.332922" data-zoom="14" data-title="ArtStone"></div><div class="contacts__text"><div class="contacts__box"><h2 class="contacts__title">Контакты</h2><div class="contacts__links"><a style="color:rgb(255, 255, 255)" href="tel:+7(921)632-28-09" target="_blank" rel="noopener">+7(921)632-28-09</a><br><br><a style="color:rgb(255, 255, 255)" href="mailto:km89r@mail.ru" target="_blank" rel="noopener">km89r@mail.ru</a></div><p class="contacts__addr">Деревня Поярково, городской округ Химки,<br>Московская область</p></div></div></section>
+<section class="contacts" id="rec1650995321"><div class="contacts__map" data-ymap data-lat="56.008001" data-lng="37.332922" data-zoom="14" data-title="ArtStone"></div><div class="contacts__text"><div class="contacts__box"><h1 class="contacts__title">Контакты</h1><div class="contacts__links"><a style="color:rgb(255, 255, 255)" href="tel:+7(921)632-28-09" target="_blank" rel="noopener">+7(921)632-28-09</a><br><br><a style="color:rgb(255, 255, 255)" href="mailto:km89r@mail.ru" target="_blank" rel="noopener">km89r@mail.ru</a></div><p class="contacts__addr">Деревня Поярково, городской округ Химки,<br>Московская область</p></div></div></section>
 
 </main>
 
@@ -99,7 +99,7 @@
 <footer class="ftr">
   <div class="ftr__in">
     <div class="ftr__col">
-      <a href="index.html"><img class="ftr__logo" src="img/photo_34353037.png" alt="Art Stone" width="120" height="90"></a>
+      <a href="index.html"><img loading="lazy" decoding="async" class="ftr__logo" src="img/photo_34353037.png" alt="Art Stone" width="120" height="90"></a>
       <p class="ftr__priv"><a href="privacy.html">Политика конфиденциальности</a></p>
     </div>
     <div class="ftr__col">
@@ -153,12 +153,12 @@
       <div class="popup__title" id="popup-calc-title">Рассчитать стоимость проекта</div>
       <div class="popup__descr">Оставьте контакты: перезвоним и подберём решение под вашу задачу.</div>
       <form class="form" novalidate data-form="calc">
-        <div class="form__group"><input type="text" name="Name" autocomplete="name" placeholder="Ваше имя:"></div>
-        <div class="form__group"><input type="tel" name="Phone" autocomplete="tel" placeholder="Ваш номер телефона:" data-mask required inputmode="tel"><div class="form__err"></div></div>
-        <div class="form__group"><textarea name="Textarea" rows="3" placeholder="Ваш комментарий "></textarea></div>
-        <div class="form__group"><label class="form__check"><input type="checkbox" name="Checkbox" value="yes" checked><i></i><span>Я согласен с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span></label><div class="form__err"></div></div>
+        <div class="form__group"><input type="text" name="Name" autocomplete="name" placeholder="Ваше имя:" aria-label="Ваше имя"></div>
+        <div class="form__group"><input type="tel" name="Phone" autocomplete="tel" placeholder="Ваш номер телефона:" data-mask required inputmode="tel" aria-label="Ваш номер телефона"><div class="form__err" role="alert"></div></div>
+        <div class="form__group"><textarea name="Textarea" rows="3" placeholder="Ваш комментарий " aria-label="Ваш комментарий"></textarea></div>
+        <div class="form__group"><label class="form__check"><input type="checkbox" name="Checkbox" value="yes" checked><i></i><span>Я согласен с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span></label><div class="form__err" role="alert"></div></div>
         <button type="submit" class="form__submit">Отправить</button>
-        <div class="form__ok" hidden>Заявка принята. Свяжемся с вами в ближайшее время.</div>
+        <div class="form__ok" role="status" aria-live="polite" hidden>Заявка принята. Свяжемся с вами в ближайшее время.</div>
       </form>
     </div>
   </div>
@@ -171,12 +171,12 @@
       <div class="popup__title" id="popup-call-title">Закажите обратный звонок</div>
       <div class="popup__descr">Оставьте контакты: перезвоним и подберём решение под вашу задачу.</div>
       <form class="form" novalidate data-form="call">
-        <div class="form__group"><input type="text" name="Name" autocomplete="name" placeholder="Ваше имя:"></div>
-        <div class="form__group"><input type="tel" name="Phone" autocomplete="tel" placeholder="Ваш номер телефона:" data-mask required inputmode="tel"><div class="form__err"></div></div>
-        <div class="form__group"><textarea name="Textarea" rows="3" placeholder="Ваш комментарий "></textarea></div>
-        <div class="form__group"><label class="form__check"><input type="checkbox" name="Checkbox" value="yes" checked><i></i><span>Я согласен с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span></label><div class="form__err"></div></div>
+        <div class="form__group"><input type="text" name="Name" autocomplete="name" placeholder="Ваше имя:" aria-label="Ваше имя"></div>
+        <div class="form__group"><input type="tel" name="Phone" autocomplete="tel" placeholder="Ваш номер телефона:" data-mask required inputmode="tel" aria-label="Ваш номер телефона"><div class="form__err" role="alert"></div></div>
+        <div class="form__group"><textarea name="Textarea" rows="3" placeholder="Ваш комментарий " aria-label="Ваш комментарий"></textarea></div>
+        <div class="form__group"><label class="form__check"><input type="checkbox" name="Checkbox" value="yes" checked><i></i><span>Я согласен с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span></label><div class="form__err" role="alert"></div></div>
         <button type="submit" class="form__submit">Отправить</button>
-        <div class="form__ok" hidden>Заявка принята. Свяжемся с вами в ближайшее время.</div>
+        <div class="form__ok" role="status" aria-live="polite" hidden>Заявка принята. Свяжемся с вами в ближайшее время.</div>
       </form>
     </div>
   </div>

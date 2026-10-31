@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /spasibo-b2b
+Disallow: /thanks
+Disallow: /send.php
+
+# TODO: уточнить у заказчика, боевой домен. Адрес ниже поправить, если домен другой.
+Sitemap: https://art-stone.site/sitemap.xml

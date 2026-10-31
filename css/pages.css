@@ -79,6 +79,21 @@ select.zf__in { cursor: pointer; }
 .zf__btn { display: block; width: 100%; margin-top: 10px; padding: 0 30px; font-family: inherit; transition: opacity .2s ease; }
 .zf__btn:hover { opacity: .88; }
 .zf__btn:disabled { opacity: .5; cursor: default; }
-.zf__err { margin-top: 4px; font-size: 13px; line-height: 1.3; color: #ff8a8a; }
+.zf__err { margin-top: 4px; font-size: 14px; line-height: 1.3; color: #ff8a8a; }
 .zf__err:empty { display: none; }
 .zf__ok { margin-top: 16px; padding: 12px 14px; background: rgba(25, 156, 104, .18); border: 1px solid var(--green); border-radius: 5px; font-size: 15px; line-height: 1.4; font-weight: 400; }
+
+/* Блок «Ключевые параметры» под первым экраном страниц услуг */
+.facts { background: #1e1e1e; color: #fff; }
+.facts__list { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; width: min(1200px, 100%); margin: 0 auto; padding: 0; list-style: none; }
+.facts__i { display: flex; flex-direction: column; gap: 6px; padding: 32px 24px; border-left: 1px solid rgba(255, 255, 255, .15); }
+.facts__i:first-child { border-left: 0; }
+.facts__i b { font-size: 28px; line-height: 1.15; font-weight: 600; }
+.facts__i span { font-size: 15px; line-height: 1.4; color: rgba(255, 255, 255, .75); }
+@media (max-width: 960px) {
+  .facts__list { grid-template-columns: repeat(2, 1fr); }
+  .facts__i { border-left: 0; border-top: 1px solid rgba(255, 255, 255, .15); padding: 24px 20px; }
+  .facts__i:nth-child(-n+2) { border-top: 0; }
+  .facts__i b { font-size: 24px; }
+}
+@media (max-width: 480px) { .facts__i { padding: 20px 16px; } .facts__i b { font-size: 20px; } }

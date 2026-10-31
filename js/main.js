@@ -9,7 +9,9 @@
      Сейчас формы только проверяют поля и показывают сообщение об успехе.
      Чтобы заявки реально уходили, укажите адрес обработчика (например, Formspree,
      собственный PHP-скрипт или webhook CRM): window.FORM_ENDPOINT = 'https://...';        */
-  window.FORM_ENDPOINT = window.FORM_ENDPOINT || '';
+  /* На хостинге с PHP (Бегет) заявки принимает send.php. Локально и на github.io обработчика нет. */
+  var devHost = !location.hostname || location.protocol === 'file:' || /^(localhost|127\.|\[::1\])/.test(location.hostname) || /\.github\.io$/.test(location.hostname);
+  window.FORM_ENDPOINT = window.FORM_ENDPOINT || (devHost ? '' : '/send.php');
 
   /* ---------- появление блоков при скролле ---------- */
   (function reveal() {
