@@ -272,3 +272,32 @@ body.home { --sec: clamp(96px, 9vw + 16px, 176px); }
   .h-head { margin-bottom: var(--s7); }
   .h-rows .h-row { padding: var(--s5) 0; }
 }
+
+/* ---------- крупные заголовки со смещением строк ---------- */
+.h-head { display: block; margin-bottom: var(--s8); }
+.h-head__t { max-width: none; font-size: clamp(2.75rem, 7.2vw, 7.25rem); line-height: .96; font-weight: 300; letter-spacing: -.045em; }
+.h-head__t span, .h-hero__t span, .h-cta__t span { display: block; }
+.h-head__t span:nth-child(2), .h-hero__t span:nth-child(2) { padding-left: 12%; }
+.h-head__t span:nth-child(3), .h-hero__t span:nth-child(3) { padding-left: 4%; }
+.h-hero__t { max-width: none; font-size: clamp(2.75rem, 7.6vw, 7.5rem); letter-spacing: -.045em; }
+.h-cta__t { max-width: none; font-size: clamp(2.75rem, 7vw, 7rem); line-height: .96; letter-spacing: -.045em; margin-top: 0; }
+.h-cta__t span:nth-child(2) { padding-left: 12%; }
+.h-about__p { grid-column: 1 / -1; max-width: 22em; font-size: clamp(1.75rem, 4vw, 3.75rem); line-height: 1.12; letter-spacing: -.035em; text-indent: 14%; }
+.h-prod__txt { grid-column: 1 / 7; }
+.h-prod__dl { grid-column: 8 / 13; }
+.h-prod__body { margin-top: var(--s7); }
+.h-prod__fig { margin-bottom: 0; }
+.h-faq__head .h-head__t { margin-top: 0; font-size: clamp(2.5rem, 5.4vw, 5rem); }
+.h-faq__head .h-head__t span:nth-child(2) { padding-left: 8%; }
+.h-faq__head p { margin-top: var(--s5); }
+.h-b2b__box h2 { margin-top: 0; }
+.contacts__title { margin-top: 0; }
+@media (max-width: 959px) {
+  .h-head__t { font-size: clamp(2.5rem, 12vw, 4.25rem); }
+  .h-hero__t { font-size: clamp(2.5rem, 12vw, 4.5rem); }
+  .h-cta__t { font-size: clamp(2.5rem, 12vw, 4.5rem); }
+  .h-head__t span, .h-hero__t span, .h-cta__t span { padding-left: 0 !important; display: inline; }
+  .h-head__t span:nth-child(2), .h-hero__t span:nth-child(2) { padding-left: 0; }
+  .h-about__p { text-indent: 0; font-size: clamp(1.625rem, 6.4vw, 2.5rem); }
+  .h-prod__txt, .h-prod__dl { grid-column: 1 / -1; }
+}
