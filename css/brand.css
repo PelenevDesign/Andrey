@@ -367,3 +367,6 @@ body.home { --sec: clamp(96px, 9vw + 16px, 176px); }
 }
 @media (max-width: 639px) { .h-prod .t-pic { display: none; } }
 .t-split > .t-split__r { display: flex; }
+/* без фото-вставок: колонка текста под заголовком каталога сдвинута вправо */
+.h-head--caps .t-note { grid-column: 7 / 11; }
+@media (max-width: 959px) { .h-head--caps .t-note { grid-column: 1 / -1; } }
