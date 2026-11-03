@@ -301,3 +301,69 @@ body.home { --sec: clamp(96px, 9vw + 16px, 176px); }
   .h-about__p { text-indent: 0; font-size: clamp(1.625rem, 6.4vw, 2.5rem); }
   .h-prod__txt, .h-prod__dl { grid-column: 1 / -1; }
 }
+
+/* ============================================================
+   Нестандартная вёрстка заголовков главной
+   ============================================================ */
+
+/* фото-вставка внутри строки заголовка */
+.t-pic { display: inline-block; width: 1.9em; height: .78em; margin: 0 .08em; border-radius: 999px; background: #222 50% 50% / cover no-repeat; vertical-align: baseline; transform: translateY(.04em); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .12); }
+
+/* счётчик в скобках у заголовка */
+.t-sup { display: inline-block; margin-left: .35em; font-size: max(.75rem, .16em); font-weight: 400; letter-spacing: .06em; line-height: 1; color: var(--muted); vertical-align: top; transform: translateY(.9em); }
+
+/* заголовок в потоке без разбивки на ступени */
+.t-flow span { display: inline !important; padding-left: 0 !important; }
+.t-right { text-align: right; }
+.t-right .t-sup { transform: translateY(.9em); }
+
+/* центрированное заявление: белый текст переходит в серый */
+.t-center { grid-column: 1 / -1; max-width: 21em; margin: 0 auto; text-align: center; font-size: clamp(1.75rem, 3.6vw, 3.25rem); line-height: 1.14; font-weight: 400; letter-spacing: -.03em; text-wrap: balance; }
+
+/* заглавные с отступом первой строки, фото камня и колонка текста */
+.h-head--caps { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s4); row-gap: var(--s6); align-items: center; }
+.t-caps { grid-column: 1 / -1; font-size: clamp(2rem, 4.4vw, 4.25rem); line-height: 1.02; font-weight: 500; letter-spacing: -.02em; text-transform: uppercase; text-indent: 26%; }
+.t-stone { grid-column: 1 / 4; width: 100%; height: clamp(120px, 12vw, 180px); object-fit: cover; border-radius: 999px; }
+.t-note { grid-column: 5 / 9; max-width: 26em; font-size: .9375rem; line-height: 1.6; font-weight: 400; color: var(--muted); }
+.t-caps--sm { font-size: clamp(1.625rem, 3vw, 2.75rem); text-indent: 18%; line-height: 1.04; }
+
+/* строки с разным выравниванием и подписью внутри */
+.t-split { font-size: clamp(2.75rem, 7.2vw, 7.25rem); line-height: .96; font-weight: 300; letter-spacing: -.045em; }
+.t-split > span { display: block; }
+.t-split__r { display: flex; align-items: flex-end; justify-content: flex-end; gap: clamp(24px, 4vw, 64px); }
+.t-split__cap { max-width: 17em; padding-bottom: .9em; font-size: .9375rem; line-height: 1.5; font-weight: 400; letter-spacing: 0; color: var(--muted); }
+.t-split__m { padding-left: 18%; }
+
+/* CTA по центру */
+.h-cta--center .h-cta__in { text-align: center; }
+.h-cta--center .h-cta__t { max-width: 13em; margin: 0 auto; }
+.h-cta--center .h-cta__row { flex-direction: column; align-items: center; gap: var(--s5); }
+.h-cta--center .h-cta__row p { max-width: 26em; }
+.h-cta--center .h-cta__act { justify-content: center; }
+
+@media (max-width: 959px) {
+  .t-caps { text-indent: 0; font-size: clamp(1.75rem, 7.4vw, 2.75rem); }
+  .t-caps--sm { font-size: clamp(1.5rem, 6.4vw, 2.25rem); }
+  .t-stone { grid-column: 1 / 7; height: 110px; }
+  .t-note { grid-column: 7 / -1; }
+  .t-split { font-size: clamp(2.5rem, 12vw, 4.25rem); }
+  .t-split__r { flex-direction: column-reverse; align-items: flex-end; gap: var(--s3); }
+  .t-split__cap { padding-bottom: 0; text-align: right; }
+  .t-split__m { padding-left: 0; }
+  .t-center { font-size: clamp(1.5rem, 6.4vw, 2.25rem); }
+  .t-right { text-align: left; }
+}
+@media (max-width: 479px) {
+  .t-stone, .t-note { grid-column: 1 / -1; }
+  .t-stone { height: 96px; }
+}
+.t-split__r { justify-content: space-between; align-items: flex-end; }
+.t-split__cap { flex: 0 1 300px; max-width: none; padding-left: 0; }
+@media (max-width: 959px) { .t-split__cap { flex-basis: auto; max-width: 20em; } }
+.t-split__cap { display: block; }
+@media (max-width: 959px) {
+  .t-split__r { flex-direction: column-reverse; align-items: flex-start; justify-content: flex-start; gap: 0; }
+  .t-split__cap { margin: var(--s3) 0 var(--s4); text-align: left; line-height: 1.5; }
+}
+@media (max-width: 639px) { .h-prod .t-pic { display: none; } }
+.t-split > .t-split__r { display: flex; }
