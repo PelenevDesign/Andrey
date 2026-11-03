@@ -532,3 +532,13 @@ body.page-light { background: var(--bg); }
 /* политика: крупный заголовок и воздух сверху */
 body.page-light main { padding-top: var(--s7); }
 body.page-light main h1 { max-width: 14em; margin-bottom: var(--s7) !important; font-size: clamp(2.25rem, 5vw, 4.5rem) !important; font-weight: 300 !important; line-height: 1.04 !important; letter-spacing: -.035em; }
+
+/* главная: первый экран как на внутренних страницах (текст и кнопки по левому краю) */
+.h-hero { justify-content: flex-end; min-height: clamp(600px, 92vh, 900px); padding: calc(var(--hdr) + var(--s7)) 0 var(--s7); }
+.h-hero__in { flex: 0 0 auto; }
+.h-hero__main { margin-top: 0; padding-top: 0; }
+.h-hero__t { max-width: 13em; font-size: clamp(2.5rem, 6.4vw, 6.25rem); line-height: .98; letter-spacing: -.04em; }
+.h-hero__row { display: block; margin-top: var(--s5); }
+.h-hero__lead { max-width: 34em; font-size: 1rem; line-height: 1.6; color: rgba(243, 242, 238, .8); }
+.h-hero__act { margin-top: var(--s6); }
+@media (max-width: 959px) { .h-hero__t { font-size: clamp(2.5rem, 11vw, 4.25rem); } }
