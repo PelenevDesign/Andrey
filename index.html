@@ -29,15 +29,9 @@
 <!-- ============ ШАПКА ============ -->
 <header class="hdr" id="header">
   <div class="hdr__in">
-    <a class="hdr__logo" href="index.html" aria-label="Art Stone">
-      <img src="img/photo_62323032.png" alt="Art Stone" width="80" height="60">
-    </a>
-    <a class="hdr__brandbox" href="index.html">
-      <span class="hdr__brand">Art Stone</span>
-      <span class="hdr__sub">ИЗГОТОВЛЕНИЕ ПАННО</span>
-    </a>
-
-    <nav class="hdr__nav" aria-label="Главное меню">
+    <div class="hdr__bar">
+      <a class="hdr__logo" href="index.html" aria-label="Art Stone, на главную"><img src="img/photo_62323032.png" alt="Art Stone" width="80" height="60"><span class="hdr__name">Art Stone</span></a>
+      <nav class="hdr__nav" aria-label="Главное меню">
       <a class="hdr__link hdr__link--1" href="index.html">Главная</a>
       <div class="hdr__drop hdr__link--2" data-drop>
         <button type="button" class="hdr__link hdr__link--has-sub" aria-haspopup="true" aria-expanded="false">Изделия</button>
@@ -56,11 +50,15 @@
       <a class="hdr__link hdr__link--3" href="about.html">О компании</a>
       <a class="hdr__link hdr__link--4" href="contacts.html">Контакты</a>
     </nav>
+    </div>
 
-    <a class="hdr__phone" href="tel:+79216322809">+7(921)632-28-09</a>
-    <a class="hdr__mail" href="mailto:km89r@mail.ru">km89r@mail.ru</a>
+    <div class="hdr__info">
+      <span>Производство в Подмосковье</span>
+      <a class="hdr__phone" href="tel:+79216322809">+7 (921) 632-28-09</a>
+    </div>
 
-    <a class="hdr__cta" data-popup="call" href="#">Заказать звонок</a>
+    <a class="hdr__cta" data-popup="call" href="#"><span class="hdr__cta-t">Заказать звонок</span><span class="hdr__cta-i hdr__cta-i--arrow"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span><span class="hdr__cta-i hdr__cta-i--phone"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span></a>
+
     <button type="button" class="hdr__burger" aria-label="Открыть меню" data-menu-open>
       <span></span><span></span><span></span>
     </button>
