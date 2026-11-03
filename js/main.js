@@ -279,6 +279,23 @@
     } else { load(); }
   }
 
+  /* ---------- шапка: прозрачная над первым экраном, с фоном после прокрутки ---------- */
+  (function header() {
+    var hdr = $('#header');
+    if (!hdr) return;
+    /* текущий раздел в меню */
+    var here = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '') || 'index';
+    $$('.hdr__nav > a.hdr__link', hdr).forEach(function (a) {
+      if (a.getAttribute('href').replace(/\.html$/, '') === here) { a.classList.add('is-active'); a.setAttribute('aria-current', 'page'); }
+    });
+    if ($('.hdr__drop .drop a[href="' + here + '.html"]', hdr)) $('.hdr__drop > .hdr__link', hdr).classList.add('is-active');
+    var hero = $('main > .h-hero:first-child, main > .hero2:first-child, main > .b2bh:first-child');
+    if (!hero) { hdr.classList.add('is-solid'); return; }
+    var set = function () { hdr.classList.toggle('is-solid', window.scrollY > 24); };
+    window.addEventListener('scroll', set, { passive: true });
+    set();
+  })();
+
   /* ---------- плавающая кнопка звонка ---------- */
   (function floatCall() {
     var box = $('#fcall');

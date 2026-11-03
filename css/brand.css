@@ -549,3 +549,56 @@ body.page-light main h1 { max-width: 14em; margin-bottom: var(--s7) !important; 
 .h-hero__row { margin-top: clamp(var(--s3), 3svh, var(--s5)); }
 .h-hero__act { margin-top: clamp(var(--s4), 4svh, var(--s6)); }
 @media (max-width: 959px) { .h-hero__t { font-size: clamp(2.25rem, min(11vw, 8svh), 4.25rem); } }
+
+/* слайдер «Наше производство»: зазор между фото, скругление по картинке, общая левая ось */
+.sl__track { gap: var(--s3); padding: 0 max(var(--gut), calc((100vw - var(--maxw)) / 2 + var(--gut))); }
+.sl__item { width: min(600px, 82vw); overflow: hidden; border-radius: var(--r-m); scroll-margin-left: max(var(--gut), calc((100vw - var(--maxw)) / 2 + var(--gut))); background: #1a1a1a; }
+.sl__item img { transition: transform 1s var(--ease); }
+.sl__item:hover img { transform: scale(1.03); }
+.sl__btn { width: 48px; height: 48px; background: transparent; border: 1px solid var(--hair); transition: background-color .4s var(--ease), border-color .4s var(--ease); }
+.sl__btn::after { top: 19px; border-color: var(--fg); }
+.sl__btn--next::after { left: 17px; }
+.sl__btn--prev::after { left: 21px; }
+.sl__btn:hover:not(:disabled) { background: var(--fg); border-color: var(--fg); }
+.sl__btn:hover:not(:disabled)::after { border-color: #0d0d0d; }
+.sl__btn:disabled { opacity: .3; }
+
+/* ============================================================
+   ШАПКА v2: прозрачная над первым экраном, тонкая типографика,
+   навигация по центру, справа телефон и контурная кнопка
+   ============================================================ */
+.hdr { height: 76px; background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: none;
+  transition: background-color .6s var(--ease), -webkit-backdrop-filter .6s var(--ease), backdrop-filter .6s var(--ease), box-shadow .6s var(--ease); }
+.hdr.is-solid { background: rgba(13, 13, 13, .8); -webkit-backdrop-filter: blur(20px) saturate(140%); backdrop-filter: blur(20px) saturate(140%); box-shadow: 0 1px 0 rgba(243, 242, 238, .06); }
+.hdr__in { height: 76px; width: 100%; max-width: calc(var(--maxw) + 2 * var(--gut)); padding: 0 var(--gut); }
+.hdr__logo, .hdr__logo img { width: 40px; height: 30px; }
+.hdr__brandbox { margin-left: 12px; }
+.hdr__brand { font-size: .75rem; line-height: 1; font-weight: 500; letter-spacing: .24em; text-transform: uppercase; }
+.hdr__nav { gap: 30px; padding: 0 24px; }
+.hdr__link { position: relative; height: 32px; padding: 0; font-size: .8125rem; line-height: 32px; font-weight: 400; letter-spacing: .02em; opacity: .62; }
+.hdr__link:hover { opacity: 1; }
+.hdr__link.is-active { opacity: 1; box-shadow: none; }
+.hdr__link.is-active::before { content: ''; position: absolute; left: 50%; bottom: -2px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: currentColor; }
+.hdr__link--has-sub::after { margin-left: 6px; opacity: .7; }
+.hdr__phone { font-size: .8125rem; font-weight: 400; letter-spacing: .04em; opacity: .9; }
+.hdr__mail { display: none !important; }
+@media (min-width: 1140px) {
+  .hdr__cta { height: 40px; margin-left: 24px; padding: 0 20px; background: transparent; color: var(--fg); border: 1px solid rgba(243, 242, 238, .32); font: 500 .8125rem/1 var(--ff); letter-spacing: .02em; }
+  .hdr__cta:hover { background: var(--fg); color: #0d0d0d; border-color: var(--fg); }
+}
+.hdr__burger { width: 44px; height: 44px; }
+.hdr__burger span { left: 9px; width: 26px; height: 1.5px; }
+.hdr__burger span:nth-child(1) { top: 17px; }
+.hdr__burger span:nth-child(2) { top: 25px; }
+.hdr__burger span:nth-child(3) { display: none; }
+@media (max-width: 639px) {
+  .hdr, .hdr__in { height: 64px; }
+  .hdr__logo, .hdr__logo img { width: 36px; height: 27px; }
+  .hdr__brand { font-size: .6875rem; letter-spacing: .2em; }
+  .hdr__phone { font-size: .75rem; }
+}
+.drop { margin-top: 18px; border-radius: 16px; background: rgba(20, 20, 20, .96); color: var(--fg); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); box-shadow: 0 24px 60px rgba(0, 0, 0, .5), inset 0 0 0 1px rgba(243, 242, 238, .08); }
+.drop::after { display: none; }
+.drop a { color: var(--fg); font-weight: 400; font-size: .875rem; opacity: .8; }
+.drop a:hover { background: rgba(243, 242, 238, .06); opacity: 1; }
+.ftr .drop { background: rgba(20, 20, 20, .98); }
