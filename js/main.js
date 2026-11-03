@@ -19,18 +19,44 @@
   var devHost = !location.hostname || location.protocol === 'file:' || /^(localhost|127\.|\[::1\])/.test(location.hostname) || /\.github\.io$/.test(location.hostname);
   window.FORM_ENDPOINT = window.FORM_ENDPOINT || (devHost ? '' : '/send.php');
 
-  /* ---------- появление блоков при скролле ---------- */
+  /* ---------- появление блоков при скролле: из размытия, с лёгким сдвигом ---------- */
   (function reveal() {
-    var items = $$('.reveal');
-    if (!('IntersectionObserver' in window)) {
+    var SEL = [
+      'main h1', 'main h2', 'main .sh__l', 'main .sx__descr', 'main .h-head__l', 'main .t-statement__cap',
+      '.hero2__kicker', '.hero2__lead', '.hero2__act', '.h-hero__lead', '.h-hero__act', '.b2bh__sub', '.b2bh__cta', '.b2bh__stats',
+      '.facts__i', '.h-facts__list > li', '.h-card', '.wcard', '.scard', '.rw__img', '.rw__txt', '.f66__item', '.f66__img',
+      '.c902', '.st', '.c12', '.l510__i', '.c686', '.gal__item', '.mat__i', '.mat__grid > *', '.why__i', '.rc', '.h-row',
+      '.prodx__img', '.prodx__card', '.h-prod__fig', '.h-prod__txt', '.h-prod__dl', '.calc__in', '.cta2__in', '.h-cta__row', '.acc',
+      '.sl__item', '.art__cover', '.art__text > section > *', '.art__cta', '.pcard', '.client', '.step', '.case', '.terms li',
+      '.ftr__cta', '.ftr__grid > *', '.contacts__box', '.h-b2b__box', '.tx68 > *', '.h218__img', '.h218__in', '.split__body',
+      '.checks li', '.req__side', '.bf'
+    ].join(',');
+    var SKIP = '.h-about, .hs__pin, .popup, .mmenu, .hdr, [data-anim], .lightbox';
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    $$(SEL).forEach(function (el) {
+      if (el.closest(SKIP) || el.classList.contains('reveal')) return;
+      if (el.parentElement && el.parentElement.closest('.bl, .reveal')) return;
+      el.classList.add('bl');
+    });
+    var items = $$('.reveal, .bl');
+    /* соседние элементы одного ряда появляются по очереди */
+    items.forEach(function (el) {
+      var sib = Array.prototype.filter.call(el.parentNode.children, function (c) { return c.classList.contains('bl') || c.classList.contains('reveal'); });
+      var k = sib.indexOf(el);
+      if (k > 0) el.style.transitionDelay = Math.min(k, 5) * 90 + 'ms';
+    });
+    if (reduce || !('IntersectionObserver' in window)) {
       items.forEach(function (el) { el.classList.add('is-in'); });
       return;
     }
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        el.classList.add('is-in'); io.unobserve(el);
+        if (el.style.transitionDelay) setTimeout(function () { el.style.transitionDelay = ''; }, 1600);
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
     items.forEach(function (el) { io.observe(el); });
   })();
 

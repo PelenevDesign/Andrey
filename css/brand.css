@@ -1107,3 +1107,13 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, select:focus-vi
 @media (max-width: 559px) {
   .b2b-page .pgrid > .pcard, .b2b-page .pgrid > .pcard:nth-child(n) { grid-column: 1 / -1; height: 240px; }
 }
+
+/* ============================================================
+   Появление контента «из размытия» на всём сайте
+   ============================================================ */
+html .reveal, html .bl { opacity: 0; transform: translateY(22px); filter: blur(14px);
+  transition: opacity .9s var(--ease), transform .9s var(--ease), filter .9s var(--ease); }
+html .reveal.is-in, html .bl.is-in { opacity: 1; transform: none; filter: none; }
+@media (prefers-reduced-motion: reduce) {
+  html .reveal, html .bl { opacity: 1; transform: none; filter: none; transition: none; }
+}
