@@ -798,3 +798,19 @@ h1, h2, h3, .hero2__t, .h-hero__t, .sh__t, .h-head__t, .t-split, .t-caps { overf
   .art__cta-act .pill { width: 100%; justify-content: space-between; }
   .art__cta-act .pill--line { justify-content: center; }
 }
+
+/* ---------- заголовки: белые ключевые слова + серое ---------- */
+h1 .dim, h2 .dim { color: rgba(243, 242, 238, .46); }
+.hero2 h1 .dim, .h-hero h1 .dim, .b2bh h1 .dim, .h-cta .dim, .cta2 .dim { color: rgba(243, 242, 238, .6); }
+
+/* главная: «Предсказуемый результат» — центрированное заявление */
+.t-statement { max-width: 15em; margin: 0 auto; text-align: center; font-size: clamp(2rem, 4.6vw, 4rem); line-height: 1.08; font-weight: 400; letter-spacing: -.035em; text-wrap: balance; }
+.t-statement__cap { max-width: 26em; margin: var(--s4) auto 0; text-align: center; font-size: 1rem; line-height: 1.6; color: var(--muted); }
+.h-adv .h-head { text-align: center; }
+
+/* главная: «Собственное производство» компактнее */
+.h-head__t--sm { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.06; }
+
+/* карта: чёрно-белая, цветная при наведении */
+.contacts__map ymaps, .contacts__map iframe, .contacts__map > * { transition: filter .6s var(--ease); }
+.contacts__map:hover ymaps, .contacts__map:hover iframe, .contacts__map:focus-within ymaps, .contacts__map:focus-within iframe { filter: none; }
