@@ -1091,3 +1091,19 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, select:focus-vi
   .ftr__cta-side .pill { width: 100%; justify-content: space-between; }
   .ftr__top { margin-left: 0; }
 }
+
+/* «Что изготавливаем для объектов»: мозаика из 7 карточек 2 + 3 + 2 */
+.b2b-page .pgrid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: var(--s4); }
+.b2b-page .pgrid > .pcard { grid-column: span 4; aspect-ratio: auto; height: clamp(240px, 22vw, 320px); border-radius: var(--r-m); }
+.b2b-page .pgrid > .pcard:nth-child(1) { grid-column: span 7; height: clamp(300px, 30vw, 440px); }
+.b2b-page .pgrid > .pcard:nth-child(2) { grid-column: span 5; height: clamp(300px, 30vw, 440px); }
+.b2b-page .pgrid > .pcard:nth-child(7), .b2b-page .pgrid > .pcard:nth-child(8) { grid-column: span 6; }
+.b2b-page .pcard::after { background: linear-gradient(180deg, rgba(13, 13, 13, .1) 30%, rgba(13, 13, 13, .82) 100%); }
+.b2b-page .pcard h3 { left: var(--s4); right: var(--s4); bottom: var(--s4); max-width: 22em; font-size: clamp(1.0625rem, 1.4vw, 1.375rem); line-height: 1.25; font-weight: 400; letter-spacing: -.01em; }
+@media (max-width: 959px) {
+  .b2b-page .pgrid > .pcard, .b2b-page .pgrid > .pcard:nth-child(n) { grid-column: span 6; height: clamp(220px, 38vw, 300px); }
+  .b2b-page .pgrid > .pcard:nth-child(1) { grid-column: 1 / -1; }
+}
+@media (max-width: 559px) {
+  .b2b-page .pgrid > .pcard, .b2b-page .pgrid > .pcard:nth-child(n) { grid-column: 1 / -1; height: 240px; }
+}
