@@ -1001,3 +1001,24 @@ html, body { overflow-x: clip; }
 a:focus-visible, button:focus-visible, [tabindex]:focus-visible, select:focus-visible, summary:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; border-radius: 4px; }
 .hdr__bar a:focus-visible, .hdr__bar button:focus-visible, .btn--light:focus-visible, .pill--light:focus-visible { outline-color: #199c68; }
 .b2b-page .ph__chip { font-size: .75rem; }
+
+/* ============================================================
+   ГЛАВНАЯ: «Мы делаем…» — экран фиксируется, текст проявляется по словам
+   ============================================================ */
+.h-about { position: relative; height: 260vh; padding: 0; border: 0; }
+.h-about__pin { position: sticky; top: 0; display: flex; align-items: center; height: 100svh; }
+.h-about__t { max-width: 22em; margin: 0 auto; text-align: center; font-size: clamp(1.75rem, 3.6vw, 3.5rem); line-height: 1.16; font-weight: 400; letter-spacing: -.03em; text-wrap: balance; }
+.h-about__part { display: inline; }
+.h-about__part + .h-about__part::before { content: ' '; }
+.h-about .w { color: rgba(243, 242, 238, .14); transition: color .35s var(--ease); }
+.h-about .w.is-on { color: var(--fg); }
+.h-about__part:nth-child(2) .w.is-on { color: rgba(243, 242, 238, .58); }
+@media (prefers-reduced-motion: reduce) {
+  .h-about { height: auto; padding: var(--sec) 0; }
+  .h-about__pin { position: static; height: auto; }
+  .h-about .w { color: var(--fg); }
+  .h-about__part:nth-child(2) .w { color: rgba(243, 242, 238, .58); }
+}
+
+/* заголовок каталога — обычный заголовок секции с подзаголовком */
+.h-head__l { max-width: 36em; margin-top: var(--lead-gap); font-size: 1.0625rem; line-height: 1.6; color: var(--muted); }

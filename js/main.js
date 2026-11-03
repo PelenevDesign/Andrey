@@ -337,3 +337,35 @@
     }
   })();
 })();
+
+/* главная: текст «Мы делаем…» проявляется по словам, пока экран закреплён */
+(function () {
+  'use strict';
+  var box = document.querySelector('[data-reveal-text]');
+  if (!box) return;
+  var words = [];
+  Array.prototype.forEach.call(box.querySelectorAll('.h-about__part'), function (part) {
+    var html = part.innerHTML.split(/(\s+)/).map(function (t) {
+      return /^\s+$/.test(t) || !t ? t : '<span class="w">' + t + '</span>';
+    }).join('');
+    part.innerHTML = html;
+  });
+  words = Array.prototype.slice.call(box.querySelectorAll('.w'));
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    words.forEach(function (w) { w.classList.add('is-on'); });
+    return;
+  }
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var r = box.getBoundingClientRect();
+    var total = box.offsetHeight - window.innerHeight;
+    /* первые 10 % прокрутки — пауза, последние 15 % — текст держится целиком */
+    var p = Math.min(1, Math.max(0, (-r.top / total - 0.1) / 0.75));
+    var n = Math.round(p * words.length);
+    words.forEach(function (w, i) { w.classList.toggle('is-on', i < n); });
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
