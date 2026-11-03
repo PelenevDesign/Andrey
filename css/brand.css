@@ -676,3 +676,76 @@ body.page-light main h1 { max-width: 14em; margin-bottom: var(--s7) !important; 
 
 /* страницы без первого экрана: отступ под плавающую шапку */
 body.page-light main { padding-top: calc(var(--hdr) + var(--s7)); }
+
+/* ============================================================
+   ПЛАНШЕТ: в плашке остаются ключевые пункты
+   ============================================================ */
+.hdr__short { display: none; }
+@media (min-width: 720px) and (max-width: 1139px) {
+  .hdr__bar .hdr__nav { display: flex; }
+  .hdr__bar .hdr__link--1, .hdr__bar .hdr__link--3 { display: none; }
+  .hdr__bar .hdr__link { padding: 0 14px; }
+  .hdr__long { display: none; }
+  .hdr__short { display: inline; }
+}
+
+/* ============================================================
+   МОБИЛЬНОЕ МЕНЮ v2
+   ============================================================ */
+.mmenu {
+  position: fixed; inset: 0; z-index: 300; display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 0;
+  padding: 0 var(--gut) max(var(--s5), env(safe-area-inset-bottom)); overflow-y: auto; text-align: left;
+  background: radial-gradient(80% 60% at 100% 0%, rgba(243, 242, 238, .06), transparent 60%), #0b0b0b;
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+  opacity: 0; visibility: hidden; transition: opacity .5s var(--ease), visibility .5s;
+}
+.mmenu.is-open { opacity: 1; visibility: visible; }
+
+/* верхняя строка повторяет шапку */
+.mmenu__top { display: flex; align-items: center; justify-content: space-between; flex: none; height: var(--hdr); }
+.mmenu__logo { display: flex; align-items: center; gap: 10px; height: 44px; padding: 0 16px 0 12px; border-radius: var(--bar-r); background: rgba(243, 242, 238, .94); color: #0d0d0d; font-size: .75rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
+.mmenu__logo img { width: 28px; height: 21px; object-fit: contain; filter: invert(1); }
+.mmenu .mmenu__close { position: relative; top: auto; right: auto; width: 44px; height: 44px; border-radius: var(--bar-r); background: var(--fg); }
+.mmenu .mmenu__close::before, .mmenu .mmenu__close::after { left: 13px; top: 21px; width: 18px; height: 1.5px; background: #0d0d0d; }
+
+/* пункты */
+.mmenu .mmenu__nav { display: block; margin-top: var(--s5); font-size: inherit; }
+.mmenu .mmenu__l {
+  display: flex; align-items: baseline; gap: 14px; width: 100%; padding: 14px 0; border-bottom: 1px solid var(--hair);
+  font: 300 clamp(1.75rem, 8vw, 2.75rem)/1.1 var(--ff); letter-spacing: -.03em; color: var(--fg); text-align: left;
+}
+.mmenu .mmenu__l.is-active { color: var(--fg); }
+.mmenu .mmenu__l.is-active .mmenu__n { color: var(--fg); }
+.mmenu__n { flex: none; width: 1.9em; font-size: .6875rem; font-weight: 500; letter-spacing: .12em; color: var(--muted); transform: translateY(-.9em); }
+.mmenu .mmenu__sub-toggle::after { display: none; }
+.mmenu__plus { position: relative; flex: none; width: 14px; height: 14px; margin-left: auto; align-self: center; }
+.mmenu__plus::before, .mmenu__plus::after { content: ''; position: absolute; left: 0; top: 6.5px; width: 14px; height: 1px; background: currentColor; transition: transform .4s var(--ease); }
+.mmenu__plus::after { transform: rotate(90deg); }
+.mmenu__sub-toggle[aria-expanded="true"] .mmenu__plus::after { transform: rotate(0); }
+
+/* изделия: «таблетки» */
+.mmenu .mmenu__sub { display: none; flex-wrap: wrap; gap: 8px; margin: 0; padding: var(--s3) 0 var(--s4); border-bottom: 1px solid var(--hair); }
+.mmenu .mmenu__group.is-open .mmenu__sub { display: flex; }
+.mmenu .mmenu__group.is-open .mmenu__sub-toggle { border-bottom-color: transparent; }
+.mmenu .mmenu__sub a { display: inline-flex; align-items: center; height: 40px; padding: 0 16px; border: 1px solid var(--hair); border-radius: 999px; font-size: .875rem; font-weight: 400; color: var(--fg); opacity: 1; transition: background-color .3s var(--ease), border-color .3s var(--ease); }
+.mmenu .mmenu__sub a:hover, .mmenu .mmenu__sub a.is-active { background: var(--fg); border-color: var(--fg); color: #0d0d0d; }
+
+/* низ: контакты и кнопка */
+.mmenu__foot { display: flex; flex-direction: column; gap: var(--s4); margin-top: auto; padding-top: var(--s6); }
+.mmenu__info { display: flex; flex-direction: column; gap: 4px; font-size: .9375rem; line-height: 1.5; }
+.mmenu__info a { color: var(--fg); }
+.mmenu__info span { margin-top: 4px; font-size: .8125rem; color: var(--muted); }
+.mmenu__cta { justify-content: space-between; width: 100%; }
+
+/* появление пунктов лесенкой */
+.mmenu .mmenu__l, .mmenu__foot { opacity: 0; transform: translateY(18px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+.mmenu.is-open .mmenu__l, .mmenu.is-open .mmenu__foot { opacity: 1; transform: none; }
+.mmenu.is-open .mmenu__nav > :nth-child(1), .mmenu.is-open .mmenu__nav > :nth-child(1) .mmenu__l { transition-delay: .06s; }
+.mmenu.is-open .mmenu__nav > :nth-child(2) .mmenu__l { transition-delay: .1s; }
+.mmenu.is-open .mmenu__nav > :nth-child(3) { transition-delay: .14s; }
+.mmenu.is-open .mmenu__nav > :nth-child(4) { transition-delay: .18s; }
+.mmenu.is-open .mmenu__nav > :nth-child(5) { transition-delay: .22s; }
+.mmenu.is-open .mmenu__foot { transition-delay: .28s; }
+@media (min-width: 640px) { .mmenu__cta { width: auto; align-self: flex-start; } }
+@media (prefers-reduced-motion: reduce) { .mmenu .mmenu__l, .mmenu__foot { opacity: 1; transform: none; transition: none; } }
+.mmenu .mmenu__sub { flex-direction: row; }

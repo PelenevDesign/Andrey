@@ -47,7 +47,7 @@
           </ul>
         </div>
       </div>
-      <a class="hdr__link hdr__link--b2b" href="stroitelnym-kompaniyam.html">Строительным компаниям</a>
+      <a class="hdr__link hdr__link--b2b" href="stroitelnym-kompaniyam.html"><span class="hdr__long">Строительным компаниям</span><span class="hdr__short">Компаниям</span></a>
       <a class="hdr__link hdr__link--3" href="about.html">О компании</a>
       <a class="hdr__link hdr__link--4" href="contacts.html">Контакты</a>
     </nav>
@@ -67,26 +67,36 @@
 </header>
 
 <!-- мобильное меню -->
-<div class="mmenu" id="mmenu" aria-hidden="true">
-  <button type="button" class="mmenu__close" aria-label="Закрыть меню" data-menu-close></button>
-  <nav class="mmenu__nav">
-    <a href="index.html">Главная</a>
+<div class="mmenu" id="mmenu" role="dialog" aria-modal="true" aria-label="Меню сайта" aria-hidden="true">
+  <div class="mmenu__top">
+    <a class="mmenu__logo" href="index.html" aria-label="Art Stone, на главную"><img src="img/photo_62323032.png" alt="" width="32" height="24"><span>Art Stone</span></a>
+    <button type="button" class="mmenu__close" aria-label="Закрыть меню" data-menu-close></button>
+  </div>
+  <nav class="mmenu__nav" aria-label="Меню">
+    <a class="mmenu__l" href="index.html"><span class="mmenu__n">01</span>Главная</a>
     <div class="mmenu__group">
-      <button type="button" class="mmenu__sub-toggle" aria-expanded="false">Изделия</button>
-      <ul class="mmenu__sub">
-        <li><a href="gidrorez.html">Гидроабразивная резка</a></li>
-        <li><a href="panno.html">Панно из камня</a></li>
-        <li><a href="stupeni.html">Лестницы и ступени из камня</a></li>
-        <li><a href="podokonniki.html">Подоконники из камня</a></li>
-        <li><a href="stoleshici.html">Столешницы из камня</a></li>
-        <li><a href="45grad.html">Запил под 45° и бесшовные соединения</a></li>
+      <button type="button" class="mmenu__l mmenu__sub-toggle" aria-expanded="false" aria-controls="mmenu-sub"><span class="mmenu__n">02</span>Изделия<i class="mmenu__plus" aria-hidden="true"></i></button>
+      <ul class="mmenu__sub" id="mmenu-sub">
+        <li><a href="stoleshici.html">Столешницы</a></li>
+        <li><a href="stupeni.html">Лестницы и ступени</a></li>
+        <li><a href="podokonniki.html">Подоконники</a></li>
+        <li><a href="panno.html">Панно</a></li>
+        <li><a href="45grad.html">Запил под 45°</a></li>
+        <li><a href="gidrorez.html">Гидрорезка</a></li>
       </ul>
     </div>
-    <a href="stroitelnym-kompaniyam.html">Строительным компаниям</a>
-    <a href="about.html">О компании</a>
-    <a href="contacts.html">Контакты</a>
+    <a class="mmenu__l" href="stroitelnym-kompaniyam.html"><span class="mmenu__n">03</span>Строительным компаниям</a>
+    <a class="mmenu__l" href="about.html"><span class="mmenu__n">04</span>О компании</a>
+    <a class="mmenu__l" href="contacts.html"><span class="mmenu__n">05</span>Контакты</a>
   </nav>
-  <button type="button" class="btn-white btn-white--sm" data-popup="call" data-menu-close>Заказать звонок</button>
+  <div class="mmenu__foot">
+    <div class="mmenu__info">
+      <a href="tel:+79216322809">+7 (921) 632-28-09</a>
+      <a href="mailto:km89r@mail.ru">km89r@mail.ru</a>
+      <span>Производство: д. Поярково, г.&nbsp;о.&nbsp;Химки</span>
+    </div>
+    <button type="button" class="pill pill--light mmenu__cta" data-popup="call" data-menu-close>Заказать звонок<span class="pill__ico"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span></button>
+  </div>
 </div>
 
 <main id="main">

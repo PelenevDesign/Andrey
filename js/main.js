@@ -69,6 +69,14 @@
       tgl.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
+
+    /* текущий раздел; на странице изделия список изделий сразу раскрыт */
+    var here = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '') || 'index';
+    $$('a', menu).forEach(function (a) {
+      var h = (a.getAttribute('href') || '').replace(/\.html$/, '');
+      if (h === here && !a.classList.contains('mmenu__logo')) { a.classList.add('is-active'); a.setAttribute('aria-current', 'page'); }
+    });
+    if (tgl && $('.mmenu__sub a.is-active', menu)) tgl.click();
   })();
 
   /* ---------- слайдер «Примеры наших работ» ---------- */
