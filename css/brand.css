@@ -952,3 +952,15 @@ html, body { overflow-x: clip; }
 .f10__col { padding-left: var(--gut); padding-right: var(--gut); margin-left: 0; }
 .tx68, .f10__in { width: 100%; }
 @media (min-width: 960px) { .sx .sx__title { padding-right: max(var(--gut), 16%); } }
+
+/* панно: карточка шага всегда целиком в окне (картинка подстраивается под высоту экрана) */
+@media (min-width: 960px) {
+  .hs { --hs-img: clamp(170px, calc(100svh - var(--hdr) - 330px), 420px); height: calc(100svh + var(--hs-dist, 1600px)); }
+  .hs__pin { height: 100svh; min-height: 0; }
+  .hs__track { gap: clamp(64px, 10vw, 200px); }
+  .hs__card { width: max(520px, calc(var(--hs-img) * 1.7)); padding-top: 0; }
+  .hs__img { height: var(--hs-img); }
+  .hs__num { left: auto; right: -.35em; top: -.12em; font-size: calc(var(--hs-img) * .95); line-height: 1; }
+  .hs__title { margin-top: var(--s3); font-size: clamp(1.25rem, 1.6vw, 1.625rem); line-height: 1.25; }
+  .hs__descr { width: auto; margin-top: var(--s2); font-size: .9375rem; line-height: 1.55; }
+}
