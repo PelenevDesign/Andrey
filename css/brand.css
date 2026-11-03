@@ -814,3 +814,51 @@ h1 .dim, h2 .dim { color: rgba(243, 242, 238, .46); }
 /* карта: чёрно-белая, цветная при наведении */
 .contacts__map ymaps, .contacts__map iframe, .contacts__map > * { transition: filter .6s var(--ease); }
 .contacts__map:hover ymaps, .contacts__map:hover iframe, .contacts__map:focus-within ymaps, .contacts__map:focus-within iframe { filter: none; }
+
+/* ============================================================
+   Типографическая шкала v2: заголовки компактнее, ближе к своему блоку,
+   секция помещается в один экран
+   ============================================================ */
+:root { --sec: clamp(80px, 6vw + 24px, 128px); }
+@media (max-width: 959px) { :root { --sec: clamp(64px, 10vw, 96px); } }
+body.home { --sec: clamp(88px, 6vw + 32px, 136px); }
+
+/* первые экраны */
+.hero2__t { font-size: clamp(2.25rem, 4.8vw, 4.5rem); line-height: 1.02; }
+.h-hero__t { font-size: clamp(2.25rem, min(5vw, 9svh), 4.75rem); line-height: 1.02; }
+.b2b-page .b2bh__title { font-size: clamp(2.25rem, 4.8vw, 4.5rem); line-height: 1.02; }
+.art__title { font-size: clamp(1.875rem, 3.6vw, 3rem); }
+
+/* заголовки секций */
+.sh__t, .sx .sx__title, .sx__title, .sl__title, .f12__title, .f10__title,
+.mat .sh__t, .rcs .sh__t, .split .sh__t, .why .sh__t, .calc__t, .prodx__t, .cta2__t, .c686__title, .tx68__title,
+.b2b-page .b2b-title, .contacts__title { font-size: clamp(1.875rem, 3.2vw, 3rem); line-height: 1.06; letter-spacing: -.03em; }
+.h-head__t, .h-head__t--sm, .t-split { font-size: clamp(1.875rem, 3.4vw, 3.25rem); line-height: 1.06; }
+.t-caps { font-size: clamp(1.625rem, 2.8vw, 2.75rem); }
+.t-caps--sm { font-size: clamp(1.5rem, 2.4vw, 2.25rem); }
+.t-statement { font-size: clamp(1.875rem, 3.4vw, 3.25rem); }
+.t-center { font-size: clamp(1.5rem, 2.8vw, 2.5rem); }
+.h-cta__t { font-size: clamp(2rem, 4.2vw, 3.75rem); }
+.h-faq__head .h-head__t { font-size: clamp(1.875rem, 3.2vw, 3rem); }
+.h-b2b__box h2 { font-size: clamp(1.625rem, 2.8vw, 2.5rem); }
+.art__cta h2 { font-size: clamp(1.5rem, 2.6vw, 2.25rem); }
+
+/* подзаголовки внутри блоков */
+.rw__title, .f66__h { font-size: clamp(1.25rem, 1.8vw, 1.75rem); }
+.why__i h3, .rc h3, .c12__t, .l510__t, .st__title, .c902__txt { font-size: clamp(1.0625rem, 1.3vw, 1.25rem); }
+.acc__q { font-size: clamp(1rem, 1.2vw, 1.1875rem); }
+
+/* заголовок ближе к своему содержимому */
+.sh { padding: var(--sec) 0 var(--s5); }
+.sx .sx__title { padding-bottom: var(--s5); }
+.sx .sx__descr { margin-top: calc(var(--s4) * -1); margin-bottom: var(--s5); }
+.h-head { margin-bottom: var(--s6); }
+.mat .sh__t, .rcs .sh__t { margin-bottom: var(--s5); }
+.b2b-page .b2b-title { margin-bottom: var(--s5); }
+
+/* список + фото (гидрорезка): блок целиком в экран */
+.f66 { align-items: stretch; }
+.f66__img img { aspect-ratio: 4 / 3.4; height: 100%; max-height: 560px; }
+.f66__item { margin-bottom: var(--s5); }
+@media (max-width: 959px) { .f66__img img { height: auto; max-height: none; aspect-ratio: 4 / 3; } }
+.sh__t, .sx .sx__title, .sx__title, .sl__title, .mat .sh__t, .rcs .sh__t, .calc__t, .cta2__t, .b2b-page .b2b-title, .h-head__t { max-width: 22em; }
