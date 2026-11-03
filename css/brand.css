@@ -862,3 +862,64 @@ body.home { --sec: clamp(88px, 6vw + 32px, 136px); }
 .f66__item { margin-bottom: var(--s5); }
 @media (max-width: 959px) { .f66__img img { height: auto; max-height: none; aspect-ratio: 4 / 3; } }
 .sh__t, .sx .sx__title, .sx__title, .sl__title, .mat .sh__t, .rcs .sh__t, .calc__t, .cta2__t, .b2b-page .b2b-title, .h-head__t { max-width: 22em; }
+
+/* ============================================================
+   ОТСТУПЫ v3 — закон близости, одна шкала на весь сайт
+   заголовок → подзаголовок: 16 px (--s3)
+   шапка блока → его содержимое: 48 px (--s6)
+   элементы внутри блока: 24–32 px (--s4/--s5)
+   секция → секция: --sec (80–128 px)
+   ============================================================ */
+:root { --head-gap: var(--s6); --lead-gap: var(--s3); }
+@media (max-width: 639px) { :root { --head-gap: var(--s5); } }
+
+/* шапка секции отдельным блоком (.sh) */
+.sh { padding: var(--sec) 0 var(--head-gap); }
+.sh__l { margin-top: var(--lead-gap); }
+.sh + section, .sh + .sx, .sh + .faq, .sh + .svc, .sh + .hs, .sh + .mat { padding-top: 0 !important; }
+
+/* заголовок внутри стандартной секции */
+.sx .sx__title { padding-bottom: var(--head-gap); }
+.sx .sx__title:has(+ .sx__descr) { padding-bottom: 0; }
+.sx .sx__descr { margin-top: var(--lead-gap); margin-bottom: var(--head-gap); }
+
+/* главная и прочие блоки с .h-head */
+.h-head { margin-bottom: var(--head-gap); }
+.h-head--caps { row-gap: var(--s4); }
+.t-statement__cap { margin-top: var(--lead-gap); }
+.h-faq__head p, .cta2__p, .h-cta__row p, .calc__l, .prodx__l, .art__cta p { margin-top: var(--lead-gap); }
+.calc__l { margin-bottom: var(--s5); }
+.h-cta__row { margin-top: var(--head-gap); }
+.mat .sh__t, .rcs .sh__t, .b2b-page .b2b-title { margin-bottom: var(--head-gap); }
+.split__in, .why__in { row-gap: var(--s4); }
+.f12 { gap: var(--head-gap); }
+.sl__title { padding-bottom: 0; }
+.sl__head { margin-bottom: var(--head-gap); align-items: center; }
+.sl__ctl { margin-bottom: 0; }
+.b2b-page .b2b-lead { margin-top: calc(var(--head-gap) * -1 + var(--lead-gap)); margin-bottom: var(--head-gap); }
+
+/* первые экраны */
+.hero2__lead, .h-hero__lead { margin-top: var(--s4); }
+.hero2__act, .h-hero__act { margin-top: var(--s5); }
+
+/* горизонтальные шаги (панно): карточки начинаются сразу под шапкой блока */
+@media (min-width: 960px) {
+  .hs__pin { align-items: flex-start; padding-top: calc(var(--hdr) + var(--s4)); }
+  .sh + .hs { margin-top: calc(var(--head-gap) - var(--hdr) - var(--s4)); }
+}
+
+/* внутри блоков — единый ритм */
+.rw { margin-bottom: var(--s8); }
+.rw__title, .f66__h { margin-bottom: var(--s3); padding-bottom: 0; }
+.f66__item { margin-bottom: var(--s5); }
+.why__i, .h-rows .h-row { padding: var(--s5) 0; }
+.mat__grid { gap: var(--s5) var(--s4); }
+.sts { gap: var(--s5) var(--s4); }
+.c902s, .c686s, .rcs__list, .h-svc__grid, .svc__in { gap: var(--s4); }
+.gal { gap: var(--s3); }
+@media (min-width: 960px) { .sh + .hs { margin-top: calc(var(--head-gap) - var(--hdr) - var(--s4) - 44px); } }
+.calc__l { margin-bottom: var(--head-gap); }
+.tx68__up { margin-bottom: var(--lead-gap); } .tx68__title { margin-bottom: var(--lead-gap); }
+.b2b-page .why { padding-block: 0; background: none; }
+.b2b-page .terms__title { margin-bottom: 0; }
+@media (max-width: 959px) { .b2b-page .terms { gap: var(--head-gap); } }
