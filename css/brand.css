@@ -542,3 +542,10 @@ body.page-light main h1 { max-width: 14em; margin-bottom: var(--s7) !important; 
 .h-hero__lead { max-width: 34em; font-size: 1rem; line-height: 1.6; color: rgba(243, 242, 238, .8); }
 .h-hero__act { margin-top: var(--s6); }
 @media (max-width: 959px) { .h-hero__t { font-size: clamp(2.5rem, 11vw, 4.25rem); } }
+
+/* первый экран главной целиком помещается в окно: высота = экран, размер заголовка зависит и от высоты окна */
+.h-hero { min-height: 100svh; padding: calc(var(--hdr) + var(--s5)) 0 clamp(var(--s5), 6svh, var(--s7)); }
+.h-hero__t { font-size: clamp(2.25rem, min(6.4vw, 10svh), 6.25rem); }
+.h-hero__row { margin-top: clamp(var(--s3), 3svh, var(--s5)); }
+.h-hero__act { margin-top: clamp(var(--s4), 4svh, var(--s6)); }
+@media (max-width: 959px) { .h-hero__t { font-size: clamp(2.25rem, min(11vw, 8svh), 4.25rem); } }
