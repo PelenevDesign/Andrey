@@ -246,3 +246,29 @@ body.home .reveal.is-in { opacity: 1; transform: none; }
   body.home .reveal { opacity: 1; transform: none; transition: none; }
   .h-card__img, .wcard__img { transition: none; }
 }
+
+/* ---------- меньше линий, больше воздуха ---------- */
+body.home { --sec: clamp(96px, 9vw + 16px, 176px); }
+.micro--rule { padding-top: 0; border-top: 0; }
+.h-hero__top, .h-hero__row, .h-cta__row { border-top: 0; }
+.h-hero__row { padding-top: 0; margin-top: var(--s7); }
+.h-cta__row { padding-top: 0; margin-top: var(--s8); }
+.h-about, .h-svc, .h-adv, .h-prod, .works, .h-cta, .h-faq { border-top: 0; }
+.h-facts__list li + li { border-left: 0; }
+.h-facts__list li { padding-top: var(--s6); padding-bottom: var(--s6); }
+.h-facts__list li:nth-child(n+3) { border-top: 0; }
+.h-head { margin-bottom: var(--s8); }
+.h-prod__body { margin-top: var(--s8); }
+.h-b2b__box { border: 0; }
+.hdr { box-shadow: none; }
+.ftr { border-top: 0; }
+.wcard__btn { border-bottom: 0; padding-bottom: 0; }
+.h-cta__tel { border-bottom: 0; }
+.h-rows .h-row { padding: var(--s6) 0; }
+.h-rows .h-row:last-child { border-bottom: 0; }
+.h-svc__grid { gap: var(--s4); }
+@media (max-width: 959px) {
+  body.home { --sec: clamp(80px, 12vw, 120px); }
+  .h-head { margin-bottom: var(--s7); }
+  .h-rows .h-row { padding: var(--s5) 0; }
+}
