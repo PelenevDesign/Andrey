@@ -964,3 +964,40 @@ html, body { overflow-x: clip; }
   .hs__title { margin-top: var(--s3); font-size: clamp(1.25rem, 1.6vw, 1.625rem); line-height: 1.25; }
   .hs__descr { width: auto; margin-top: var(--s2); font-size: .9375rem; line-height: 1.55; }
 }
+
+/* ============================================================
+   ФИНАЛЬНЫЙ АУДИТ
+   ============================================================ */
+/* контраст неактивных пунктов в плашке шапки: 3,5 → 5,3 : 1 */
+.hdr__bar .hdr__link, .hdr__bar .hdr__drop > .hdr__link { color: rgba(13, 13, 13, .66); }
+
+/* при прокрутке под плавающей шапкой появляется затемнение — текст секций не наезжает на меню */
+.hdr::before { content: ''; position: absolute; inset: 0 0 -24px; z-index: -1; pointer-events: none;
+  background: linear-gradient(180deg, rgba(13, 13, 13, .92) 0%, rgba(13, 13, 13, .7) 60%, rgba(13, 13, 13, 0) 100%);
+  opacity: 0; transition: opacity .5s var(--ease); }
+.hdr.is-solid::before { opacity: 1; }
+
+/* кликабельные зоны не меньше 44 px */
+.contacts__links a, .h-cta__tel, .cta2__tel, .mmenu__info a { display: inline-flex; align-items: center; min-height: 44px; }
+.ftr__menu a, .ftr__col--contacts a { min-height: 44px; display: inline-flex; align-items: center; padding: 0; }
+.ftr__priv a { display: inline-flex; align-items: center; min-height: 44px; }
+.ftr__menu li { margin: 0; }
+.hdr__logo { min-height: 40px; }
+.art__crumbs a { display: inline-flex; align-items: center; min-height: 32px; }
+
+/* мелкие подписи не меньше 12 px */
+.kicker, .prodx .kicker, .ph__chip { font-size: .75rem; }
+
+/* шаги работы на телефоне компактнее: номер слева, без пустот */
+@media (max-width: 639px) {
+  .st { padding-top: 0; }
+  .st__num { position: static; width: 40px; height: 40px; margin: 0 0 var(--s3); line-height: 38px; font-size: 1rem; }
+  .st__card { padding: var(--s4); }
+  .st__title { margin-top: 0; }
+  .st__img { width: 40px; height: 40px; padding-top: var(--s2); }
+}
+
+/* фокус клавиатуры виден на тёмном и светлом фоне одинаково */
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible, select:focus-visible, summary:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; border-radius: 4px; }
+.hdr__bar a:focus-visible, .hdr__bar button:focus-visible, .btn--light:focus-visible, .pill--light:focus-visible { outline-color: #199c68; }
+.b2b-page .ph__chip { font-size: .75rem; }
