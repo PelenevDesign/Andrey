@@ -927,3 +927,28 @@ body.home { --sec: clamp(88px, 6vw + 32px, 136px); }
 /* overflow-x: hidden на html/body ломает position: sticky (закреплённые шаги на панно).
    clip так же прячет горизонтальную прокрутку, но не создаёт контейнер прокрутки */
 html, body { overflow-x: clip; }
+
+/* ============================================================
+   Заголовки секций v3: крупные, но не гигантские (~58 px на 1440, до 64 px)
+   и всегда на одной левой оси с содержимым
+   ============================================================ */
+.sh__t, .sx .sx__title, .sx__title, .sl__title, .f12__title, .f10__title,
+.mat .sh__t, .rcs .sh__t, .split .sh__t, .why .sh__t, .calc__t, .prodx__t, .cta2__t, .c686__title, .tx68__title,
+.b2b-page .b2b-title, .contacts__title, .h-head__t, .h-head__t--sm, .h-faq__head .h-head__t, .t-statement {
+  font-size: clamp(2.125rem, 3.4vw + .5rem, 4rem); line-height: 1.04; letter-spacing: -.035em;
+}
+.t-caps { font-size: clamp(1.75rem, 2.6vw + .4rem, 3.25rem); }
+.h-cta__t { font-size: clamp(2.25rem, 4vw + .5rem, 4.5rem); }
+.prodx__t, .calc__t { font-size: clamp(1.875rem, 2.6vw + .5rem, 3.25rem); }
+
+/* заголовок стандартной секции: не центрируется отдельно, ось = контейнер */
+.sx .sx__title { max-width: calc(var(--maxw) + 2 * var(--gut)); padding-right: max(var(--gut), 30%); }
+@media (max-width: 959px) { .sx .sx__title { padding-right: var(--gut); } }
+/* одна левая ось для всех контейнеров */
+.b2b-page .b2b-wrap { width: 100%; max-width: calc(var(--maxw) + 2 * var(--gut)); padding-left: var(--gut); padding-right: var(--gut); }
+.tx68 { max-width: calc(var(--maxw) + 2 * var(--gut)); padding-inline: var(--gut); }
+.tx68 > * { max-width: 900px; }
+.f10__in { padding-left: 0; padding-right: 0; }
+.f10__col { padding-left: var(--gut); padding-right: var(--gut); margin-left: 0; }
+.tx68, .f10__in { width: 100%; }
+@media (min-width: 960px) { .sx .sx__title { padding-right: max(var(--gut), 16%); } }
