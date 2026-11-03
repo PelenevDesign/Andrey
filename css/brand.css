@@ -1029,3 +1029,9 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible, select:focus-vi
 .h-about__part + .h-about__part { margin-top: .5em; color: rgba(243, 242, 238, .6); }
 .h-about__part + .h-about__part::before { content: none; }
 @media (prefers-reduced-motion: reduce) { .h-about__part { opacity: 1; transform: none; } }
+
+/* «Мы делаем…» v3: один абзац как раньше; первая часть белеет за ~1 прокрутку, вторая — за следующие 1–2 */
+.h-about { height: calc(100svh + 380px); }
+.h-about__part { display: inline; transform: none; color: var(--fg); opacity: calc(.18 + var(--k) * .82); transition: opacity .5s var(--ease); }
+.h-about__part + .h-about__part { margin-top: 0; color: var(--fg); }
+.h-about__part + .h-about__part::before { content: ' '; }

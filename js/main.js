@@ -354,9 +354,10 @@
     ticking = false;
     var total = box.offsetHeight - window.innerHeight;
     var p = clamp(-box.getBoundingClientRect().top / total);
-    /* первая часть: 0–35 % прокрутки, вторая: 45–80 %, остаток — текст держится целиком */
-    parts[0].style.setProperty('--k', clamp(p / 0.35).toFixed(3));
-    if (parts[1]) parts[1].style.setProperty('--k', clamp((p - 0.45) / 0.35).toFixed(3));
+    /* первая часть — первые ~110 px прокрутки (один шаг колеса), вторая — следующие ~200 px */
+    var y = -box.getBoundingClientRect().top;
+    parts[0].style.setProperty('--k', clamp(y / 110).toFixed(3));
+    if (parts[1]) parts[1].style.setProperty('--k', clamp((y - 130) / 200).toFixed(3));
   }
   window.addEventListener('scroll', function () { if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }, { passive: true });
   window.addEventListener('resize', update);
