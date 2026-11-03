@@ -923,3 +923,7 @@ body.home { --sec: clamp(88px, 6vw + 32px, 136px); }
 .b2b-page .why { padding-block: 0; background: none; }
 .b2b-page .terms__title { margin-bottom: 0; }
 @media (max-width: 959px) { .b2b-page .terms { gap: var(--head-gap); } }
+
+/* overflow-x: hidden на html/body ломает position: sticky (закреплённые шаги на панно).
+   clip так же прячет горизонтальную прокрутку, но не создаёт контейнер прокрутки */
+html, body { overflow-x: clip; }
