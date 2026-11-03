@@ -17,12 +17,13 @@
 <link rel="apple-touch-icon" href="img/Group_11_34343464.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;subset=latin,cyrillic&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/system.css">
+<link rel="stylesheet" href="css/brand.css">
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
-<body>
+<body class="home">
 <a class="skip" href="#main">К основному контенту</a>
 
 <!-- ============ ШАПКА ============ -->
@@ -59,6 +60,7 @@
     <a class="hdr__phone" href="tel:+79216322809">+7(921)632-28-09</a>
     <a class="hdr__mail" href="mailto:km89r@mail.ru">km89r@mail.ru</a>
 
+    <a class="hdr__cta" data-popup="call" href="#">Заказать звонок</a>
     <button type="button" class="hdr__burger" aria-label="Открыть меню" data-menu-open>
       <span></span><span></span><span></span>
     </button>
@@ -91,234 +93,268 @@
 <main id="main">
 
   <!-- ============ HERO ============ -->
-  <section class="hero" id="top">
-    <div class="hero__bg"></div>
-    <div class="hero__in">
-      <h1 class="hero__title">Изделия из натурального камня под ключ в Москве</h1>
-      <p class="hero__text"><b>Собственное производство. Формат изделий до 4 метров. 20 лет опыта.</b><br>Изготавливаем и устанавливаем столешницы, лестницы, подоконники, камины, облицовку интерьера и фасадов.</p>
-      <ul class="hero__list">
-        <!-- TODO: уточнить у заказчика, число проектов: здесь 482, на странице «О компании» — более 1500 --><li><img loading="lazy" decoding="async" src="img/icon_62363765.svg" alt="" width="20" height="20">482 реализованных проекта</li>
-        <li><img loading="lazy" decoding="async" src="img/icon_36353839.svg" alt="" width="20" height="20">Сроки фиксируем в договоре</li>
-        <li><img loading="lazy" decoding="async" src="img/icon_36623762.svg" alt="" width="20" height="20">Работа без посредников</li>
-      </ul>
-      <button type="button" class="btn-white hero__btn" data-popup="calc">Рассчитать стоимость</button>
+  <section class="h-hero" id="top">
+    <div class="h-hero__bg" aria-hidden="true"></div>
+    <div class="wrap h-hero__in">
+      <div class="h-hero__top">
+        <span class="micro">Производство · Подмосковье</span>
+        <span class="micro">Натуральный камень и керамогранит</span>
+      </div>
+      <div class="h-hero__main">
+        <h1 class="h-hero__t reveal">Изделия из натурального камня <span class="dim">под ключ в Москве</span></h1>
+        <div class="h-hero__row">
+          <div class="h-hero__act reveal">
+            <button type="button" class="pill pill--light" data-popup="calc">Рассчитать стоимость<span class="pill__ico"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span></button>
+            <a class="pill pill--line" href="stroitelnym-kompaniyam.html">Для строительных компаний</a>
+          </div>
+          <p class="h-hero__lead reveal">Собственное производство, станки до 4 метров, 20 лет опыта. Изготавливаем и устанавливаем столешницы, лестницы, подоконники, камины и облицовку интерьеров и фасадов.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ============ B2B: ссылка для строительных компаний ============ -->
-  <aside class="b2b-strip" aria-label="Для строительных компаний">
-    <a class="b2b-strip__in" href="stroitelnym-kompaniyam.html">
-      <span class="b2b-strip__q">Работаете на объекте?</span>
-      <span class="b2b-strip__t">Условия для строительных компаний</span>
-      <span class="b2b-strip__a" aria-hidden="true">&rarr;</span>
-    </a>
-  </aside>
+  <!-- TODO: уточнить у заказчика, число проектов: на главной было «482 реализованных проекта», на странице «О компании» — «более 1500»; цифра убрана из этого блока до уточнения -->
+  <section class="h-facts" aria-label="Коротко о компании">
+    <div class="wrap">
+      <ul class="h-facts__list">
+        <li><span class="micro">Опыт</span><strong>20 лет</strong></li>
+        <li><span class="micro">Формат</span><strong>до 4 м без стыков</strong></li>
+        <li><span class="micro">Сроки</span><strong>Фиксируем в договоре</strong></li>
+        <li><span class="micro">Работа</span><strong>Без посредников</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ О производстве ============ -->
+  <section class="h-about">
+    <div class="wrap h-grid">
+      <span class="micro micro--rule h-about__lab">О производстве</span>
+      <p class="h-about__p reveal">Мы делаем <span class="dim">столешницы, лестницы, подоконники, панно и камины</span> из мрамора, гранита, оникса и кварца. <span class="dim">Замер, 3D-проектирование, изготовление, доставка и монтаж: весь цикл в собственном цехе.</span></p>
+    </div>
+  </section>
+
+  <!-- ============ Что мы изготавливаем ============ -->
+  <section class="h-svc" id="catalog">
+    <div class="wrap">
+      <div class="h-head">
+        <span class="micro micro--rule">Что мы изготавливаем</span>
+        <h2 class="h-head__t reveal">Изделия для частных и коммерческих объектов</h2>
+      </div>
+      <div class="h-svc__grid">
+        <a class="h-card h-card--7 reveal" href="stoleshici.html">
+          <img class="h-card__img" src="img/WhatsApp_2023-11-22_38343433.jpg" alt="Столешница из натурального камня" loading="lazy" decoding="async">
+          <span class="h-card__n micro">01</span>
+          <span class="h-card__ico" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
+          <div class="h-card__cap"><h3>Столешницы</h3><p>Кухни, санузлы, барные стойки. Изделия до 4 метров без стыков</p></div>
+        </a>
+        <a class="h-card h-card--5 reveal" href="stupeni.html">
+          <img class="h-card__img" src="img/19_39633538.jpg" alt="Ступени из гранита и мрамора" loading="lazy" decoding="async">
+          <span class="h-card__n micro">02</span>
+          <span class="h-card__ico" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
+          <div class="h-card__cap"><h3>Лестницы и ступени</h3><p>Ступени из камня, мрамора и гранита</p></div>
+        </a>
+        <a class="h-card h-card--4 reveal" href="podokonniki.html">
+          <img class="h-card__img" src="img/117_9aae61a67b3884eb_63373333.jpg" alt="Подоконник из камня" loading="lazy" decoding="async">
+          <span class="h-card__n micro">03</span>
+          <span class="h-card__ico" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
+          <div class="h-card__cap"><h3>Подоконники</h3><p>Стойкость к износу и механическим повреждениям</p></div>
+        </a>
+        <a class="h-card h-card--4 reveal" href="panno.html">
+          <img class="h-card__img" src="img/WhatsApp_Image_2022-_64363135.jpeg" alt="Панно из керамогранита и мрамора" loading="lazy" decoding="async">
+          <span class="h-card__n micro">04</span>
+          <span class="h-card__ico" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
+          <div class="h-card__cap"><h3>Панно</h3><p>Из керамогранита и мрамора, точный рисунок</p></div>
+        </a>
+        <a class="h-card h-card--4 reveal" href="45grad.html">
+          <img class="h-card__img" src="img/6363636547_1_37663532.jpg" alt="Запил камня под 45 градусов" loading="lazy" decoding="async">
+          <span class="h-card__n micro">05</span>
+          <span class="h-card__ico" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
+          <div class="h-card__cap"><h3>Запил под 45°</h3><p>Бесшовные соединения без сколов и задиров</p></div>
+        </a>
+        <a class="h-card h-card--12 reveal" href="gidrorez.html">
+          <img class="h-card__img" src="img/2_62316139.jpg" alt="Гидроабразивная резка камня" loading="lazy" decoding="async">
+          <span class="h-card__n micro">06</span>
+          <span class="h-card__ico" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span>
+          <div class="h-card__cap"><h3>Гидроабразивная резка</h3><p>Прямая и фигурная резка с высокой точностью</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- ============ Что получает заказчик ============ -->
-  <section class="adv">
-    <img loading="lazy" decoding="async" width="700" height="698" class="adv__decor" src="img/photo_61343563.png" alt="" aria-hidden="true">
-    <div class="adv__in">
-      <h2 class="adv__title reveal">НАШИ ПРЕИМУЩЕСТВА</h2>
-      <div class="adv__item adv__item--1 reveal">
-        <h3>Свой цех: изделия до 4 метров без стыков</h3>
-        <p>Станки с шириной обработки до 4 метров</p>
+  <section class="h-adv">
+    <div class="wrap">
+      <div class="h-head">
+        <span class="micro micro--rule">Что получает заказчик</span>
+        <h2 class="h-head__t reveal">Предсказуемый результат от замера до монтажа</h2>
       </div>
-      <div class="adv__item adv__item--2 reveal">
-        <h3>Мрамор, гранит, оникс, кварц</h3>
-        <p>Гидроабразивная резка высокой точности</p>
-      </div>
-      <div class="adv__item adv__item--3 reveal">
-        <h3>Изготовление, доставка и монтаж по договору</h3>
-        <p>Соблюдаем сроки по договору</p>
+      <div class="h-rows">
+        <div class="h-row reveal"><span class="micro">01</span><h3>Свой цех: изделия до 4 метров без стыков</h3><p>Станки с шириной обработки до 4 метров.</p></div>
+        <div class="h-row reveal"><span class="micro">02</span><h3>Мрамор, гранит, оникс, кварц</h3><p>Гидроабразивная резка высокой точности.</p></div>
+        <div class="h-row reveal"><span class="micro">03</span><h3>Изготовление, доставка и монтаж по договору</h3><p>Соблюдаем сроки по договору.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ============ Производство в Подмосковье, 20 лет опыта ============ -->
-  <section class="prod">
-    <div class="prod__in">
-      <div class="prod__img" role="img" aria-label="Образцы камня и керамогранита в нашем цехе"></div>
-      <div class="prod__card reveal">
-        <div class="prod__kicker">АртСтон</div>
-        <h2 class="prod__title">СОБСТВЕННОЕ ПРОИЗВОДСТВО</h2>
-        <p class="prod__lead">Полный цикл: замер, 3D-проектирование, изготовление и монтаж.</p>
-        <p class="prod__list"><b>Оборудование</b><br>Станки обрабатывают материал шириной до 4 метров и позволяют изготавливать изделия сложной геометрии.<br><br><b>Материалы</b><br>Мрамор • Гранит • Оникс • Кварц • Травертин</p>
+  <!-- ============ Собственное производство ============ -->
+  <section class="h-prod">
+    <div class="wrap">
+      <figure class="h-prod__fig reveal">
+        <img src="img/IMG-20230411-WA0009_35353937.jpg" alt="Образцы камня и керамогранита в нашем цехе" loading="lazy" decoding="async">
+      </figure>
+      <div class="h-grid h-prod__body">
+        <span class="micro micro--rule h-prod__lab">Собственное производство</span>
+        <div class="h-prod__txt reveal">
+          <h2>Производство в Подмосковье</h2>
+          <p>Полный цикл: замер, 3D-проектирование, изготовление и монтаж.</p>
+        </div>
+        <dl class="h-prod__dl reveal">
+          <dt class="micro">Оборудование</dt>
+          <dd>Станки обрабатывают материал шириной до 4 метров и позволяют изготавливать изделия сложной геометрии.</dd>
+          <dt class="micro">Материалы</dt>
+          <dd>Мрамор, гранит, оникс, кварц, травертин.</dd>
+        </dl>
       </div>
     </div>
   </section>
 
-  <!-- ============ CTA ============ -->
-  <section class="cta">
-    <div class="cta__bg"></div>
-    <div class="cta__in">
-      <!-- TODO: уточнить у заказчика, срок расчёта: здесь 20 минут, в метаданных гидрорезки было 15 минут, на странице для строительных компаний — 24 часа; привести к одному значению или разделить «предварительная оценка» и «расчёт по проекту» --><h2 class="cta__title reveal">УЗНАЙТЕ СТОИМОСТЬ ВАШЕГО ПРОЕКТА ЗА 20 МИНУТ</h2>
-      <p class="cta__text">Рассчитаем цену по чертежу, фотографии или описанию задачи.</p>
-      <a class="cta__phone" href="tel:+79216322809">+7(921) 632-28-09</a>
-      <button type="button" class="btn-white cta__btn reveal" data-popup="calc">Рассчитать стоимость</button>
+  <!-- ============ Для строительных компаний ============ -->
+  <section class="h-b2b" aria-labelledby="b2b-t">
+    <div class="wrap">
+      <div class="h-b2b__box reveal">
+        <div>
+          <span class="micro">Для бизнеса</span>
+          <h2 id="b2b-t">Строительным компаниям, застройщикам и дизайнерам</h2>
+        </div>
+        <div class="h-b2b__side">
+          <p>Работаем по договору: фиксируем сроки и стоимость, ведём объект от замера до монтажа.</p>
+          <div class="h-b2b__act">
+            <a class="pill pill--light" href="stroitelnym-kompaniyam.html">Условия для компаний<span class="pill__ico"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span></a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ============ ПРИМЕРЫ РАБОТ (слайдер) ============ -->
   <section class="works" id="works">
-    <h2 class="works__title">Примеры наших работ</h2>
-    <div class="works__slider" data-slider>
-      <button type="button" class="works__arrow works__arrow--prev" aria-label="Предыдущий слайд" hidden></button>
-      <button type="button" class="works__arrow works__arrow--next" aria-label="Следующий слайд"></button>
-      <div class="works__viewport">
-        <ul class="works__track">
-          <li class="works__slide">
-            <a class="wcard" href="tpost/stoleshnica.html">
-              <div class="wcard__img" style="background-image:url(img/WhatsApp_Image_2025-_39666666.jpeg)"></div>
-              <div class="wcard__body">
-                <h3 class="wcard__title">Угловая столешница из гранита Tan Brown с утолщением и профилем L+A</h3>
-                <p class="wcard__descr">Угловая кухонная столешница из гранита Tan Brown: утолщённая кромка, обработка мойки, вырез под варочную панель. Изготовление и монтаж.</p>
-              </div>
-              <span class="wcard__btn">Читать статью</span>
-            </a>
-          </li>
-          <li class="works__slide">
-            <a class="wcard" href="tpost/a966z0ijt1-oblitsovka-kaminov-naturalnim-kamnem.html">
-              <div class="wcard__img" style="background-image:url(img/5ed78878-f0b4-4e0d-b_61366531.jpg)"></div>
-              <div class="wcard__body">
-                <h3 class="wcard__title">Облицовка каминов натуральным камнем</h3>
-                <p class="wcard__descr">Облицовка каминов мрамором и гранитом. Индивидуальные размеры, точная обработка, монтаж на объекте.</p>
-              </div>
-              <span class="wcard__btn">Читать статью</span>
-            </a>
-          </li>
-          <li class="works__slide">
-            <a class="wcard" href="tpost/vhodnayagruppa.html">
-              <div class="wcard__img" style="background-image:url(img/IMG_20251201_170112_31666365.webp)"></div>
-              <div class="wcard__body">
-                <h3 class="wcard__title">Входная группа из крупноформатного гранита Tan Brown: изготовление и монтаж</h3>
-                <p class="wcard__descr">Входная группа из крупноформатного гранита: площадки, ступени, цоколь. Плиты до 3000×1000 мм, полный цикл — от изготовления до монтажа.</p>
-              </div>
-              <span class="wcard__btn">Читать статью</span>
-            </a>
-          </li>
-          <li class="works__slide">
-            <a class="wcard" href="tpost/zdm690c7z1-vipolnennie-proekti.html">
-              <div class="wcard__img" style="background-image:url(img/20_1_31646564.jpg)"></div>
-              <div class="wcard__body">
-                <h3 class="wcard__title">Выполненные проекты</h3>
-                <p class="wcard__descr">Мраморные холлы и лестницы, панно из мрамора и керамогранита с латунными вставками, гранитные столешницы и входные группы.</p>
-              </div>
-              <span class="wcard__btn">Читать статью</span>
-            </a>
-          </li>
-        </ul>
+    <div class="wrap">
+      <div class="h-head">
+        <span class="micro micro--rule">Примеры работ</span>
+        <h2 class="h-head__t reveal">Реализованные изделия</h2>
+      </div>
+      <div class="works__slider" data-slider>
+        <button type="button" class="works__arrow works__arrow--prev" aria-label="Предыдущий слайд" hidden></button>
+        <button type="button" class="works__arrow works__arrow--next" aria-label="Следующий слайд"></button>
+        <div class="works__viewport">
+          <ul class="works__track">
+            <li class="works__slide">
+              <a class="wcard" href="tpost/stoleshnica.html">
+                <div class="wcard__img" style="background-image:url(img/WhatsApp_Image_2025-_39666666.jpeg)"></div>
+                <div class="wcard__body">
+                  <h3 class="wcard__title">Угловая столешница из гранита Tan Brown с утолщением и профилем L+A</h3>
+                  <p class="wcard__descr">Утолщённая кромка, обработка мойки, вырез под варочную панель. Изготовление и монтаж.</p>
+                </div>
+                <span class="wcard__btn">Читать статью</span>
+              </a>
+            </li>
+            <li class="works__slide">
+              <a class="wcard" href="tpost/a966z0ijt1-oblitsovka-kaminov-naturalnim-kamnem.html">
+                <div class="wcard__img" style="background-image:url(img/5ed78878-f0b4-4e0d-b_61366531.jpg)"></div>
+                <div class="wcard__body">
+                  <h3 class="wcard__title">Облицовка каминов натуральным камнем</h3>
+                  <p class="wcard__descr">Мрамор и гранит. Индивидуальные размеры, точная обработка, монтаж на объекте.</p>
+                </div>
+                <span class="wcard__btn">Читать статью</span>
+              </a>
+            </li>
+            <li class="works__slide">
+              <a class="wcard" href="tpost/vhodnayagruppa.html">
+                <div class="wcard__img" style="background-image:url(img/IMG_20251201_170112_31666365.webp)"></div>
+                <div class="wcard__body">
+                  <h3 class="wcard__title">Входная группа из крупноформатного гранита Tan Brown</h3>
+                  <p class="wcard__descr">Площадки, ступени, цоколь. Плиты до 3000×1000 мм, полный цикл от изготовления до монтажа.</p>
+                </div>
+                <span class="wcard__btn">Читать статью</span>
+              </a>
+            </li>
+            <li class="works__slide">
+              <a class="wcard" href="tpost/zdm690c7z1-vipolnennie-proekti.html">
+                <div class="wcard__img" style="background-image:url(img/20_1_31646564.jpg)"></div>
+                <div class="wcard__body">
+                  <h3 class="wcard__title">Выполненные проекты</h3>
+                  <p class="wcard__descr">Мраморные холлы и лестницы, панно с латунными вставками, гранитные столешницы и входные группы.</p>
+                </div>
+                <span class="wcard__btn">Читать статью</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="h-cta">
+    <div class="h-cta__bg" aria-hidden="true"></div>
+    <div class="wrap h-cta__in">
+      <span class="micro">Расчёт стоимости</span>
+      <!-- TODO: уточнить у заказчика, срок расчёта: здесь 20 минут, в метаданных гидрорезки было 15 минут, на странице для строительных компаний — 24 часа; привести к одному значению или разделить «предварительная оценка» и «расчёт по проекту» -->
+      <h2 class="h-cta__t reveal">Узнайте стоимость проекта за 20 минут</h2>
+      <div class="h-cta__row reveal">
+        <p>Рассчитаем цену по чертежу, фотографии или описанию задачи.</p>
+        <div class="h-cta__act">
+          <button type="button" class="pill pill--light" data-popup="calc">Рассчитать стоимость<span class="pill__ico"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span></button>
+          <a class="h-cta__tel" href="tel:+79216322809">+7 (921) 632-28-09</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ FAQ ============ -->
-  <section class="sec-head sec-head--faq">
-    <h2 class="sec-head__title reveal">ОТВЕТЫ НА ЧАСТЫЕ ВОПРОСЫ</h2>
-    <p class="sec-head__text reveal">НЕ НАШЛИ ОТВЕТ? ПОЗВОНИТЕ ИЛИ НАПИШИТЕ — ОТВЕТИМ НА ВАШ ВОПРОС.</p>
-  </section>
-
-  <section class="faq">
-    <div class="faq__in">
-      <div class="acc">
-        <button type="button" class="acc__head" aria-expanded="false" aria-controls="acc1">
-          <span class="acc__q">Какие материалы Вы обрабатываете?</span><span class="acc__icon" aria-hidden="true"></span>
-        </button>
-        <div class="acc__body" id="acc1" hidden>
-          <div class="acc__a"><ul>
-            <li>Керамическая плитка</li><li>Керамогранит</li><li>Мрамор</li><li>Гранит</li><li>Кварцевый агломерат</li><li>Металл</li><li>Стекло</li><li>и другие: уточняйте у менеджера</li>
-          </ul></div>
+  <section class="h-faq faq">
+    <div class="wrap h-faq__in">
+      <div class="h-faq__head">
+        <span class="micro micro--rule">Вопросы и ответы</span>
+        <h2 class="h-head__t">Частые вопросы</h2>
+        <p>Не нашли ответ? Позвоните или напишите, ответим на ваш вопрос.</p>
+      </div>
+      <div class="h-faq__list">
+        <div class="acc">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="acc1">
+            <span class="acc__q">Какие материалы вы обрабатываете?</span><span class="acc__icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc__body" id="acc1" hidden>
+            <div class="acc__a"><ul>
+              <li>Керамическая плитка</li><li>Керамогранит</li><li>Мрамор</li><li>Гранит</li><li>Кварцевый агломерат</li><li>Металл</li><li>Стекло</li><li>и другие: уточняйте у менеджера</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="acc">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="acc2">
+            <span class="acc__q">Возможно ли произвести резку день в день?</span><span class="acc__icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc__body" id="acc2" hidden>
+            <div class="acc__a">Да, если позволяют объём работ и загрузка цеха. Срок называем при консультации или оформлении заказа.</div>
+          </div>
+        </div>
+        <div class="acc">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="acc3">
+            <span class="acc__q">Возможно ли произвести резку у меня дома?</span><span class="acc__icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc__body" id="acc3" hidden>
+            <div class="acc__a">Нет. Оборудование стационарное и крупногабаритное, перевезти его нельзя. Резку выполняем только на производстве.</div>
+          </div>
+        </div>
+        <div class="acc">
+          <button type="button" class="acc__head" aria-expanded="false" aria-controls="acc4">
+            <span class="acc__q">Могу ли я сам предоставить материал?</span><span class="acc__icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc__body" id="acc4" hidden>
+            <div class="acc__a">Да. Сообщите об этом менеджеру или замерщику.</div>
+          </div>
         </div>
       </div>
-      <div class="acc">
-        <button type="button" class="acc__head" aria-expanded="false" aria-controls="acc2">
-          <span class="acc__q">Возможно ли произвести резку день в день?</span><span class="acc__icon" aria-hidden="true"></span>
-        </button>
-        <div class="acc__body" id="acc2" hidden>
-          <div class="acc__a">Да, если позволяют объём работ и загрузка цеха. Срок называем при консультации или оформлении заказа.</div>
-        </div>
-      </div>
-      <div class="acc">
-        <button type="button" class="acc__head" aria-expanded="false" aria-controls="acc3">
-          <span class="acc__q">Возможно ли произвести резку у меня дома?</span><span class="acc__icon" aria-hidden="true"></span>
-        </button>
-        <div class="acc__body" id="acc3" hidden>
-          <div class="acc__a">Нет. Оборудование стационарное и крупногабаритное, перевезти его нельзя. Резку выполняем только на производстве.</div>
-        </div>
-      </div>
-      <div class="acc">
-        <button type="button" class="acc__head" aria-expanded="false" aria-controls="acc4">
-          <span class="acc__q">Могу ли я сам предоставить материал?</span><span class="acc__icon" aria-hidden="true"></span>
-        </button>
-        <div class="acc__body" id="acc4" hidden>
-          <div class="acc__a">Да. Сообщите об этом менеджеру или замерщику.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ УСЛУГИ ============ -->
-  <section class="sec-head sec-head--svc">
-    <h2 class="sec-head__title reveal">Что мы изготавливаем</h2>
-    <p class="sec-head__text reveal">РАБОТАЕМ С ЧАСТНЫМИ КЛИЕНТАМИ, ДИЗАЙНЕРАМИ, СТРОИТЕЛЬНЫМИ КОМПАНИЯМИ И КОММЕРЧЕСКИМИ ОБЪЕКТАМИ.</p>
-  </section>
-
-  <section class="svc">
-    <div class="svc__in">
-      <a class="scard" href="panno.html" target="_blank" rel="noopener">
-        <div class="scard__inner">
-          <div class="scard__img" style="background-image:url(img/WhatsApp_Image_2022-_64363135.jpeg)"></div>
-          <div class="scard__shade"></div>
-          <div class="scard__content">
-            <h3 class="scard__title">Панно из керамогранита и мрамора</h3>
-            <p class="scard__descr">Прочный материал, точный рисунок</p>
-          </div>
-          <svg class="scard__arrow" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="#fff" stroke-width="1.4"/></svg>
-        </div>
-      </a>
-      <a class="scard" href="gidrorez.html" target="_blank" rel="noopener">
-        <div class="scard__inner">
-          <div class="scard__img" style="background-image:url(img/2_62316139.jpg)"></div>
-          <div class="scard__shade"></div>
-          <div class="scard__content">
-            <h3 class="scard__title">Гидроабразивная резка</h3>
-            <p class="scard__descr">Прямая и фигурная резка с высокой точностью</p>
-          </div>
-          <svg class="scard__arrow" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="#fff" stroke-width="1.4"/></svg>
-        </div>
-      </a>
-      <a class="scard" href="45grad.html" target="_blank" rel="noopener">
-        <div class="scard__inner">
-          <div class="scard__img" style="background-image:url(img/6363636547_1_37663532.jpg)"></div>
-          <div class="scard__shade"></div>
-          <div class="scard__content">
-            <h3 class="scard__title">Резка под 45 градусов</h3>
-            <p class="scard__descr">Гидроабразивный рез под углом 45 градусов без сколов и задиров</p>
-          </div>
-          <svg class="scard__arrow" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="#fff" stroke-width="1.4"/></svg>
-        </div>
-      </a>
-      <a class="scard" href="stupeni.html" target="_blank" rel="noopener">
-        <div class="scard__inner">
-          <div class="scard__img" style="background-image:url(img/19_39633538.jpg)"></div>
-          <div class="scard__shade"></div>
-          <div class="scard__content">
-            <h3 class="scard__title">Изготовление ступеней</h3>
-            <p class="scard__descr">Ступени из камня, мрамора и гранита</p>
-          </div>
-          <svg class="scard__arrow" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="#fff" stroke-width="1.4"/></svg>
-        </div>
-      </a>
-      <a class="scard" href="podokonniki.html" target="_blank" rel="noopener">
-        <div class="scard__inner">
-          <div class="scard__img" style="background-image:url(img/117_9aae61a67b3884eb_63373333.jpg)"></div>
-          <div class="scard__shade"></div>
-          <div class="scard__content">
-            <h3 class="scard__title">Подоконники</h3>
-            <p class="scard__descr">Прочность, стойкость к износу и механическим повреждениям</p>
-          </div>
-          <svg class="scard__arrow" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="#fff" stroke-width="1.4"/></svg>
-        </div>
-      </a>
     </div>
   </section>
 
@@ -333,9 +369,10 @@
     </div>
     <div class="contacts__text">
       <div class="contacts__box">
-        <h2 class="contacts__title">Контакты</h2>
+        <span class="micro">Контакты</span>
+        <h2 class="contacts__title">Приезжайте на производство</h2>
         <div class="contacts__links">
-          <a href="tel:+79216322809">+7(921)632-28-09</a><br><br>
+          <a href="tel:+79216322809">+7 (921) 632-28-09</a><br>
           <a href="mailto:km89r@mail.ru">km89r@mail.ru</a>
         </div>
         <p class="contacts__addr">Деревня Поярково, городской округ Химки,<br>Московская область</p>
