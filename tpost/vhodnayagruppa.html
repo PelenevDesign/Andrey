@@ -13,19 +13,93 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <link rel="canonical" href="https://art-stone.site/tpost/vhodnayagruppa">
+<link rel="apple-touch-icon" href="../img/Group_11_34343464.png">
 <link rel="shortcut icon" href="../img/favicon_5_64316435.ico" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;subset=latin,cyrillic&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/article.css?v=20261103">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css?v=20261103">
+<link rel="stylesheet" href="../css/system.css?v=20261103">
+<link rel="stylesheet" href="../css/brand.css?v=20261103">
 </head>
-<body class="article">
-<header class="art-bar">
-  <a class="art-bar__back" href="../" aria-label="Вернуться на главную"><svg width="11" height="20" viewBox="0 0 11 20" fill="none" aria-hidden="true"><path d="M10 1L1 10L10 19" stroke="#000" stroke-width="2"/></svg></a>
-  <a class="art-bar__title" href="../">Наши работы</a>
+<body class="art-page">
+<a class="skip" href="#main">К основному контенту</a>
+
+<!-- ============ ШАПКА ============ -->
+<header class="hdr" id="header">
+  <div class="hdr__in">
+    <div class="hdr__bar">
+      <a class="hdr__logo" href="../" aria-label="Art Stone, на главную"><img src="../img/photo_62323032.png" alt="Art Stone" width="80" height="60"><span class="hdr__name">Art Stone</span></a>
+      <nav class="hdr__nav" aria-label="Главное меню">
+      <a class="hdr__link hdr__link--1" href="../">Главная</a>
+      <div class="hdr__drop hdr__link--2" data-drop>
+        <button type="button" class="hdr__link hdr__link--has-sub" aria-haspopup="true" aria-expanded="false">Изделия</button>
+        <div class="drop" role="menu">
+          <ul>
+            <li><a role="menuitem" href="../gidrorez">Гидроабразивная резка</a></li>
+            <li><a role="menuitem" href="../panno">Панно из камня</a></li>
+            <li><a role="menuitem" href="../stupeni">Лестницы и ступени из камня</a></li>
+            <li><a role="menuitem" href="../podokonniki">Подоконники из камня</a></li>
+            <li><a role="menuitem" href="../stoleshici">Столешницы из камня</a></li>
+            <li><a role="menuitem" href="../45grad">Запил под 45° и бесшовные соединения</a></li>
+          </ul>
+        </div>
+      </div>
+      <a class="hdr__link hdr__link--b2b" href="../stroitelnym-kompaniyam"><span class="hdr__long">Строительным компаниям</span><span class="hdr__short">Компаниям</span></a>
+      <a class="hdr__link hdr__link--3" href="../about">О компании</a>
+      <a class="hdr__link hdr__link--4" href="../contacts">Контакты</a>
+    </nav>
+    </div>
+
+    <div class="hdr__info">
+      <span>Производство в Подмосковье</span>
+      <a class="hdr__phone" href="tel:+79216322809">+7 (921) 632-28-09</a>
+    </div>
+
+    <a class="hdr__cta" data-popup="call" href="#"><span class="hdr__cta-t">Заказать звонок</span><span class="hdr__cta-i hdr__cta-i--arrow"><svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span><span class="hdr__cta-i hdr__cta-i--phone"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span></a>
+
+    <button type="button" class="hdr__burger" aria-label="Открыть меню" data-menu-open>
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
-<main class="art">
+
+<!-- мобильное меню -->
+<div class="mmenu" id="mmenu" role="dialog" aria-modal="true" aria-label="Меню сайта" aria-hidden="true">
+  <div class="mmenu__top">
+    <a class="mmenu__logo" href="../" aria-label="Art Stone, на главную"><img src="../img/photo_62323032.png" alt="" width="32" height="24"><span>Art Stone</span></a>
+    <button type="button" class="mmenu__close" aria-label="Закрыть меню" data-menu-close></button>
+  </div>
+  <nav class="mmenu__nav" aria-label="Меню">
+    <a class="mmenu__l" href="../"><span class="mmenu__n">01</span>Главная</a>
+    <div class="mmenu__group">
+      <button type="button" class="mmenu__l mmenu__sub-toggle" aria-expanded="false" aria-controls="mmenu-sub"><span class="mmenu__n">02</span>Изделия<i class="mmenu__plus" aria-hidden="true"></i></button>
+      <ul class="mmenu__sub" id="mmenu-sub">
+        <li><a href="../stoleshici">Столешницы</a></li>
+        <li><a href="../stupeni">Лестницы и ступени</a></li>
+        <li><a href="../podokonniki">Подоконники</a></li>
+        <li><a href="../panno">Панно</a></li>
+        <li><a href="../45grad">Запил под 45°</a></li>
+        <li><a href="../gidrorez">Гидрорезка</a></li>
+      </ul>
+    </div>
+    <a class="mmenu__l" href="../stroitelnym-kompaniyam"><span class="mmenu__n">03</span>Строительным компаниям</a>
+    <a class="mmenu__l" href="../about"><span class="mmenu__n">04</span>О компании</a>
+    <a class="mmenu__l" href="../contacts"><span class="mmenu__n">05</span>Контакты</a>
+  </nav>
+  <div class="mmenu__foot">
+    <div class="mmenu__info">
+      <a href="tel:+79216322809">+7 (921) 632-28-09</a>
+      <a href="mailto:km89r@mail.ru">km89r@mail.ru</a>
+      <span>Производство: д. Поярково, г.&nbsp;о.&nbsp;Химки</span>
+    </div>
+    <button type="button" class="pill pill--light mmenu__cta" data-popup="call" data-menu-close>Заказать звонок<span class="pill__ico"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span></button>
+  </div>
+</div>
+
+<main class="art" id="main">
   <article class="art__in">
+    <nav class="art__crumbs" aria-label="Навигация"><a href="../">Главная</a><span aria-hidden="true">/</span><a href="../#works">Примеры работ</a></nav>
     <h1 class="art__title">Входная группа из крупноформатного гранита Tan Brown: изготовление и монтаж</h1>
     <div class="art__date">16.07.2022</div>
     <img width="1000" height="563" class="art__cover" src="../img/IMG_20251201_170112_31666365.webp" alt="Входная группа из крупноформатного гранита Tan Brown: изготовление и монтаж, фото 1">
@@ -33,7 +107,102 @@
 <section><strong>Введение</strong><br>Входная группа из крупноформатного гранита. Задача — надёжное и долговечное решение из натурального камня. Выполнили полный цикл работ: от изготовления изделий до монтажа на объекте.<br><br><figure><img width="1600" height="1200" src="../img/IMG-20250514-WA0001_33346535.jpg" alt="Входная группа из крупноформатного гранита Tan Brown: изготовление и монтаж, фото 2" loading="lazy"></figure><br><figure><img width="1280" height="720" src="../img/WhatsApp_Image_2025-_38306238.jpeg" alt="Входная группа из крупноформатного гранита Tan Brown: изготовление и монтаж, фото 3" loading="lazy"></figure><br><strong>Объект 1</strong><br><br><h3>Задача проекта</h3><br>Заказчику было важно получить входную группу, которая:<br><ul><li>выдерживает высокие нагрузки и перепады температур,</li><li>выглядит солидно и аккуратно,</li><li>не требует сложного ухода в процессе эксплуатации.</li></ul>Дополнительное требование — использование&nbsp;<strong>крупноформатных плит</strong>, чтобы минимизировать количество швов и добиться цельного визуального эффекта.<br><br><h3>Использованные материалы и решения</h3><br>Для проекта был выбран натуральный гранит&nbsp;<strong>Tan Brown (Тэн Браун)</strong>&nbsp;— проверенный вариант для уличных конструкций.<br>В работе применялись:<br><ul><li><strong>Гранит Tan Brown 30 мм, термообработанный</strong>&nbsp;— для площадок и ступеней</li><li>Термообработка делает поверхность нескользкой и безопасной для улицы.</li><li><strong>Гранит Tan Brown 20 мм, полированный</strong>&nbsp;— для вертикальных элементов и декоративных деталей</li><li>Полировка подчёркивает текстуру камня и придаёт входной группе завершённый вид.</li></ul><br><figure><img width="1000" height="563" src="../img/IMG_20251204_114032_62306232.webp" alt="Входная группа из крупноформатного гранита Tan Brown: изготовление и монтаж, фото 4" loading="lazy"></figure><figure><img width="1000" height="563" src="../img/IMG_20251201_170734_36613738.webp" alt="Входная группа из крупноформатного гранита Tan Brown: изготовление и монтаж, фото 5" loading="lazy"></figure><br><strong>Объект 2</strong><br><br><h3>Особенности изготовления и монтажа</h3><br>Проект включал работу с&nbsp;<strong>крупноформатным гранитом весом до 387 кг за одну плиту</strong>. Такие изделия требуют:<br><ul><li>точной раскройки,</li><li>профессионального оборудования,</li><li>опытной монтажной бригады.</li></ul>Размеры плит достигали&nbsp;<strong>3000×1000 мм</strong>, а вес отдельных элементов —&nbsp;<strong>220–270 кг</strong>, что исключает «ручной» монтаж и требует чёткого соблюдения технологии.<br><br><figure><img width="1000" height="563" src="../img/IMG_20251201_170112_37663563.webp" alt="Входная группа из крупноформатного гранита Tan Brown: изготовление и монтаж, фото 6" loading="lazy"></figure><figure><img width="1000" height="563" src="../img/IMG_20251201_170018_61356266.webp" alt="Входная группа из крупноформатного гранита Tan Brown: изготовление и монтаж, фото 7" loading="lazy"></figure><br><strong>Объект 2</strong><br><br><h3>Объём выполненных работ</h3><br>В рамках проекта были изготовлены и смонтированы:<br><ul><li>входные площадки из крупноформатного гранита,</li><li>ступени и подступенки,</li><li>накрывные крышки,</li><li>цоколь и плинтусы,</li><li>отмостка.</li></ul>Все элементы выполнены в едином материале и цвете, что создаёт цельный и аккуратный архитектурный образ.<br><br><h3>Результат</h3><br>В итоге заказчик получил:<br><ul><li>надёжную и износостойкую входную группу,</li><li>минимальное количество швов за счёт крупного формата плит,</li><li>аккуратный внешний вид,</li><li>решение, рассчитанное на долгие годы эксплуатации.</li></ul><br><strong>Хотите рассчитать стоимость входной группы для вашего объекта? Оставьте заявку на сайте — наш инженер бесплатно проведёт онлайн-консультацию в течение 24 часов. </strong><br><br></section>
     </div>
   </article>
+
+  <aside class="art__cta">
+    <h2>Нужно похожее изделие?</h2>
+    <p>Пришлите размеры, фото или чертёж — рассчитаем стоимость и сроки.</p>
+    <div class="art__cta-act"><button type="button" class="pill pill--light" data-popup="calc">Рассчитать стоимость<span class="pill__ico"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></span></button><a class="pill pill--line" href="../#works">Все примеры работ</a></div>
+  </aside>
 </main>
+
+<!-- ============ ПОДВАЛ ============ -->
+<footer class="ftr">
+  <div class="ftr__in">
+    <div class="ftr__col">
+      <a href="../"><img loading="lazy" decoding="async" class="ftr__logo" src="../img/photo_34353037.png" alt="Art Stone" width="120" height="90"></a>
+      <p class="ftr__priv"><a href="../privacy">Политика конфиденциальности</a></p>
+    </div>
+    <div class="ftr__col">
+      <div class="ftr__title">Меню</div>
+      <ul class="ftr__menu">
+        <li><a href="../">Главная</a></li>
+        <li data-drop class="ftr__drop">
+          <a href="#" class="ftr__has-sub" aria-haspopup="true" aria-expanded="false">Изделия</a>
+          <div class="drop drop--up" role="menu">
+            <ul>
+              <li><a role="menuitem" href="../gidrorez">Гидроабразивная резка</a></li>
+              <li><a role="menuitem" href="../panno">Панно из камня</a></li>
+              <li><a role="menuitem" href="../stupeni">Лестницы и ступени из камня</a></li>
+              <li><a role="menuitem" href="../podokonniki">Подоконники из камня</a></li>
+              <li><a role="menuitem" href="../stoleshici">Столешницы из камня</a></li>
+              <li><a role="menuitem" href="../45grad">Запил под 45° и бесшовные соединения</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="../stroitelnym-kompaniyam">Строительным компаниям</a></li>
+        <li><a href="../about">О компании</a></li>
+        <li><a href="../contacts">Контакты</a></li>
+      </ul>
+    </div>
+    <div class="ftr__col ftr__col--contacts">
+      <a href="tel:+79216322809">+7(921)632-28-09</a><br><br>
+      <a href="mailto:km89r@mail.ru">km89r@mail.ru</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ ПЛАВАЮЩАЯ КНОПКА ЗВОНКА ============ -->
+<div class="fcall" id="fcall">
+  <button type="button" class="fcall__btn" aria-label="Связаться с нами" aria-expanded="false">
+    <span class="fcall__ring"></span>
+    <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="#fff" d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 0 0-1.02.24l-2.2 2.2a15.07 15.07 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 12h2a9 9 0 0 0-9-9v2c3.87 0 7 3.13 7 7zm-4 0h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3z"/></svg>
+  </button>
+  <div class="fcall__panel" role="dialog" aria-label="Свяжитесь с нами">
+    <button type="button" class="fcall__close" aria-label="Закрыть"></button>
+    <div class="fcall__title">Свяжитесь с нами</div>
+    <div class="fcall__descr">Подберём решение под вашу задачу.</div>
+    <a class="fcall__phone" href="tel:+79216322809">+7(921)632-28-09</a>
+  </div>
+</div>
+
+<!-- ============ ПОПАПЫ С ФОРМАМИ ============ -->
+<div class="popup" id="popup-calc" role="dialog" aria-modal="true" aria-labelledby="popup-calc-title" hidden>
+  <div class="popup__box">
+    <button type="button" class="popup__close" aria-label="Закрыть диалоговое окно" data-popup-close></button>
+    <div class="popup__wrap">
+      <div class="popup__title" id="popup-calc-title">Рассчитать стоимость проекта</div>
+      <div class="popup__descr">Оставьте контакты: перезвоним и подберём решение под вашу задачу.</div>
+      <form class="form" novalidate data-form="calc">
+        <div class="form__group"><label class="form__lab" for="popup-calc-name">Ваше имя</label><input id="popup-calc-name" type="text" name="Name" autocomplete="name" placeholder="Как к вам обращаться"></div>
+        <div class="form__group"><label class="form__lab" for="popup-calc-phone">Номер телефона <span aria-hidden="true">*</span></label><input id="popup-calc-phone" type="tel" name="Phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" data-mask required inputmode="tel"><div class="form__err" role="alert"></div></div>
+        <div class="form__group"><label class="form__lab" for="popup-calc-textarea">Комментарий</label><textarea id="popup-calc-textarea" name="Textarea" rows="3" placeholder="Задача, размеры, сроки (по желанию)"></textarea></div>
+        <div class="form__group"><label class="form__check"><input type="checkbox" name="Checkbox" value="yes"><i></i><span>Я согласен с <a href="../privacy" target="_blank" rel="noopener">политикой конфиденциальности</a></span></label><div class="form__err" role="alert"></div></div>
+        <button type="submit" class="form__submit">Отправить</button>
+        <div class="form__ok" role="status" aria-live="polite" hidden>Заявка принята. Свяжемся с вами в ближайшее время.</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="popup" id="popup-call" role="dialog" aria-modal="true" aria-labelledby="popup-call-title" hidden>
+  <div class="popup__box">
+    <button type="button" class="popup__close" aria-label="Закрыть диалоговое окно" data-popup-close></button>
+    <div class="popup__wrap">
+      <div class="popup__title" id="popup-call-title">Закажите обратный звонок</div>
+      <div class="popup__descr">Оставьте контакты: перезвоним и подберём решение под вашу задачу.</div>
+      <form class="form" novalidate data-form="call">
+        <div class="form__group"><label class="form__lab" for="popup-call-name">Ваше имя</label><input id="popup-call-name" type="text" name="Name" autocomplete="name" placeholder="Как к вам обращаться"></div>
+        <div class="form__group"><label class="form__lab" for="popup-call-phone">Номер телефона <span aria-hidden="true">*</span></label><input id="popup-call-phone" type="tel" name="Phone" autocomplete="tel" placeholder="+7 (___) ___-__-__" data-mask required inputmode="tel"><div class="form__err" role="alert"></div></div>
+        <div class="form__group"><label class="form__lab" for="popup-call-textarea">Комментарий</label><textarea id="popup-call-textarea" name="Textarea" rows="3" placeholder="Задача, размеры, сроки (по желанию)"></textarea></div>
+        <div class="form__group"><label class="form__check"><input type="checkbox" name="Checkbox" value="yes"><i></i><span>Я согласен с <a href="../privacy" target="_blank" rel="noopener">политикой конфиденциальности</a></span></label><div class="form__err" role="alert"></div></div>
+        <button type="submit" class="form__submit">Отправить</button>
+        <div class="form__ok" role="status" aria-live="polite" hidden>Заявка принята. Свяжемся с вами в ближайшее время.</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="../js/main.js?v=20261103"></script>
 <script src="../js/metrika.js?v=20261103"></script>
 </body>
 </html>
