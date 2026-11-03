@@ -1162,3 +1162,11 @@ html .reveal.is-in, html .bl.is-in { opacity: 1; transform: none; filter: none; 
   .pcase__ph:nth-child(5) { display: none; }
   .pcase__ph:nth-child(4).pcase__ph, .pcase__ph:nth-child(4) { position: relative; }
 }
+
+/* заголовок и вводный абзац b2b-страницы: один отступ 16 px, без наезда (исправлено слипание в «Приезжайте на производство») */
+.b2b-page .b2b-title:has(+ .b2b-lead) { margin-bottom: var(--lead-gap); }
+.b2b-page .b2b-title + .b2b-lead { margin-top: 0; margin-bottom: var(--s5); }
+.b2b-page .split__t .b2b-lead { max-width: 30em; }
+.b2b-page .split__t .b2b-btn { margin-top: 0; }
+.b2b-page #visit .b2b-wrap.split { padding-top: 0; padding-bottom: 0; gap: var(--s7); align-items: center; }
+@media (max-width: 959px) { .b2b-page #visit .b2b-wrap.split { gap: var(--s5); } }
