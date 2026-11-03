@@ -363,3 +363,14 @@
   window.addEventListener('resize', update);
   update();
 })();
+
+/* подвал: кнопка «Наверх» */
+(function () {
+  'use strict';
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-to-top]');
+    if (!a) return;
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  });
+})();
