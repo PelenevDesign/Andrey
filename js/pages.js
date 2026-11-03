@@ -48,7 +48,8 @@
     var close = function () { box.hidden = true; document.body.classList.remove('is-locked'); img.removeAttribute('src'); };
     zoomables.forEach(function (el) {
       el.addEventListener('click', function () {
-        list = zoomables.filter(function (z) { return z.closest('section') === el.closest('section'); });
+        var scope = el.closest('[data-gallery]') || el.closest('section');
+        list = zoomables.filter(function (z) { return scope.contains(z); });
         show(list.indexOf(el));
         box.hidden = false;
         document.body.classList.add('is-locked');
