@@ -338,32 +338,25 @@
   })();
 })();
 
-/* главная: текст «Мы делаем…» проявляется по словам, пока экран закреплён */
+/* главная: «Мы делаем…» — экран закреплён, две части текста проявляются по очереди */
 (function () {
   'use strict';
   var box = document.querySelector('[data-reveal-text]');
   if (!box) return;
-  var words = [];
-  Array.prototype.forEach.call(box.querySelectorAll('.h-about__part'), function (part) {
-    var html = part.innerHTML.split(/(\s+)/).map(function (t) {
-      return /^\s+$/.test(t) || !t ? t : '<span class="w">' + t + '</span>';
-    }).join('');
-    part.innerHTML = html;
-  });
-  words = Array.prototype.slice.call(box.querySelectorAll('.w'));
+  var parts = box.querySelectorAll('.h-about__part');
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    words.forEach(function (w) { w.classList.add('is-on'); });
+    Array.prototype.forEach.call(parts, function (el) { el.style.setProperty('--k', 1); });
     return;
   }
   var ticking = false;
+  var clamp = function (v) { return Math.min(1, Math.max(0, v)); };
   function update() {
     ticking = false;
-    var r = box.getBoundingClientRect();
     var total = box.offsetHeight - window.innerHeight;
-    /* первые 10 % прокрутки — пауза, последние 15 % — текст держится целиком */
-    var p = Math.min(1, Math.max(0, (-r.top / total - 0.1) / 0.75));
-    var n = Math.round(p * words.length);
-    words.forEach(function (w, i) { w.classList.toggle('is-on', i < n); });
+    var p = clamp(-box.getBoundingClientRect().top / total);
+    /* первая часть: 0–35 % прокрутки, вторая: 45–80 %, остаток — текст держится целиком */
+    parts[0].style.setProperty('--k', clamp(p / 0.35).toFixed(3));
+    if (parts[1]) parts[1].style.setProperty('--k', clamp((p - 0.45) / 0.35).toFixed(3));
   }
   window.addEventListener('scroll', function () { if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }, { passive: true });
   window.addEventListener('resize', update);
