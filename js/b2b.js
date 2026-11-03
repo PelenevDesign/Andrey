@@ -3,7 +3,7 @@
   'use strict';
 
   var COUNTER = 88022855;
-  var THANKS_URL = 'spasibo-b2b.html';
+  var THANKS_URL = 'spasibo-b2b';
   var MAX_FILE = 25 * 1024 * 1024;
   var FILE_EXT = ['pdf', 'dwg', 'jpg', 'jpeg', 'zip'];
   var UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];

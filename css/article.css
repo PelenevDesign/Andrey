@@ -51,3 +51,4 @@ ul { list-style: none; }
   .art__text h2 { font-size: 22px; }
   .art__text h3 { font-size: 19px; }
 }
+body.article strong, body.article h1, body.article h2 { overflow-wrap: break-word; hyphens: auto; }

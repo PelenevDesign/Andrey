@@ -4,6 +4,12 @@
 
   var $ = function (s, ctx) { return (ctx || document).querySelector(s); };
   var $$ = function (s, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(s)); };
+  /* «stupeni», «stupeni.html», «./», «../» -> ключ страницы */
+  var pageKey = function (href) {
+    var h = (href || '').split('#')[0].split('?')[0].replace(/\.html$/, '');
+    h = h.split('/').filter(function (x) { return x && x !== '.' && x !== '..'; }).pop() || 'index';
+    return h;
+  };
 
   /* ---------- Куда отправлять заявки ----------
      Сейчас формы только проверяют поля и показывают сообщение об успехе.
@@ -71,9 +77,9 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') set(false); });
 
     /* текущий раздел; на странице изделия список изделий сразу раскрыт */
-    var here = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '') || 'index';
+    var here = pageKey(location.pathname.split('/').pop());
     $$('a', menu).forEach(function (a) {
-      var h = (a.getAttribute('href') || '').replace(/\.html$/, '');
+      var h = pageKey(a.getAttribute('href'));
       if (h === here && !a.classList.contains('mmenu__logo')) { a.classList.add('is-active'); a.setAttribute('aria-current', 'page'); }
     });
     if (tgl && $('.mmenu__sub a.is-active', menu)) tgl.click();
@@ -292,11 +298,11 @@
     var hdr = $('#header');
     if (!hdr) return;
     /* текущий раздел в меню */
-    var here = (location.pathname.split('/').pop() || 'index.html').replace(/\.html$/, '') || 'index';
+    var here = pageKey(location.pathname.split('/').pop());
     $$('.hdr__nav > a.hdr__link', hdr).forEach(function (a) {
-      if (a.getAttribute('href').replace(/\.html$/, '') === here) { a.classList.add('is-active'); a.setAttribute('aria-current', 'page'); }
+      if (pageKey(a.getAttribute('href')) === here) { a.classList.add('is-active'); a.setAttribute('aria-current', 'page'); }
     });
-    if ($('.hdr__drop .drop a[href="' + here + '.html"]', hdr)) $('.hdr__drop > .hdr__link', hdr).classList.add('is-active');
+    if ($$('.hdr__drop .drop a', hdr).some(function (a) { return pageKey(a.getAttribute('href')) === here; })) $('.hdr__drop > .hdr__link', hdr).classList.add('is-active');
     var hero = $('main > .h-hero:first-child, main > .hero2:first-child, main > .b2bh:first-child');
     if (!hero) { hdr.classList.add('is-solid'); return; }
     var set = function () { hdr.classList.toggle('is-solid', window.scrollY > 24); };

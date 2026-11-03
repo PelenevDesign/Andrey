@@ -749,3 +749,14 @@ body.page-light main { padding-top: calc(var(--hdr) + var(--s7)); }
 @media (min-width: 640px) { .mmenu__cta { width: auto; align-self: flex-start; } }
 @media (prefers-reduced-motion: reduce) { .mmenu .mmenu__l, .mmenu__foot { opacity: 1; transform: none; transition: none; } }
 .mmenu .mmenu__sub { flex-direction: row; }
+
+/* ---------- правки по аудиту: адаптив ---------- */
+.micro, .facts__i span, .hero2__kicker, .prodx__dl dt, .zf__lab, .h-facts .micro, .mmenu__n, .t-sup { font-size: .75rem; }
+h1, h2, h3, .hero2__t, .h-hero__t, .sh__t, .h-head__t, .t-split, .t-caps { overflow-wrap: break-word; hyphens: auto; -webkit-hyphens: auto; }
+.doc, .article, .article main { overflow-wrap: break-word; }
+@media (max-width: 959px) { .h-prod__fig { min-height: 0; } }
+@media (max-width: 479px) {
+  .sl__head { flex-wrap: wrap; align-items: center; gap: var(--s3); }
+  .sl__head .sl__title { flex: 1 1 100%; padding-bottom: 0; }
+  .sl__ctl { margin-bottom: var(--s4); }
+}
